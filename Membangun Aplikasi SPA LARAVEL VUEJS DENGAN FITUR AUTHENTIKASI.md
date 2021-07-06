@@ -4,7 +4,7 @@
 
 1. Apa yang dimaksud dengan laravel passport...
 
-  **A. Package yang ada dilaravel untuk menghandle proses authentication dengan token.**
+     **A. Package yang ada dilaravel untuk menghandle proses authentication dengan token.**
 
     B. Package yang ada dilaravel untuk menghandle proses authentication tanpa token
 
@@ -18,7 +18,7 @@
     
     B. PIP
     
-  **C. Composer**
+    **C. Composer**
     
     D. GEMS
 
@@ -28,7 +28,7 @@
 
     B. Composer project-create laravel/nama_project
     
-  **C. Composer create-project laravel/laravel nama_project**
+    **C. Composer create-project laravel/laravel nama_project**
     
     D. Composer create-project laravel/nama_project 
 
@@ -41,17 +41,18 @@
     
     C. Composer required laravel/passport
     
-  **D. Composer require laravel/passport**
+      **D. Composer require laravel/passport**
 
 ## Api Endpoint Register
 
 
 5. Cara membuat RegisterController adalah...
+
     A. php artisan create:controller Api/Auth/RegisterController
 
     B. php artisan install:controller Api/Auth/RegisterController
 
-  **C. php artisan make:controller Api/Auth/RegisterController**
+    **C. php artisan make:controller Api/Auth/RegisterController**
 
     D. php artisan build:controller Api/Auth/RegisterController
 
@@ -59,7 +60,7 @@
 
     A. register()
 
-  **B. __invoke()**
+    **B. __invoke()**
 
     C. Invoke()
 
@@ -67,7 +68,7 @@
 
 7. Fungsi untuk membuat data user baru di dalam database adalah...
    
-  **A. User::create();**
+    **A. User::create();**
 
     B. User::make();
     
@@ -83,7 +84,7 @@
     
     C. Hash::create($reques->password);
     
-  **D. Hash::make($request->password);**
+    **D. Hash::make($request->password);**
 
 9. if(!Auth::attempt(request->only('email', 'password'))) adalah kondisi jika...
     
@@ -91,7 +92,7 @@
     
     B. Proses authentikasi selesai
     
-  **C. Proses authentikasi failed**
+    **C. Proses authentikasi failed**
     
     D. Proses authentikasi berhenti
 
@@ -101,7 +102,7 @@
     
     B. 421
     
-  **C. 422**
+    **C. 422**
     
     D. 423
 
@@ -109,7 +110,7 @@
     
     A. OK
     
-  **B. Created**
+    **B. Created**
     
     C. Server Error
     
@@ -119,7 +120,7 @@
 
 12. Isi data $request->validate() yang ada di method login adalah...
     
-  **A. Email dan password**
+    **A. Email dan password**
 
     B. Nama, Email dan Password
 
@@ -163,13 +164,13 @@
 
 14. Syntax apa yang ada pada fungsi logout?
     
-  **A. Auth::user()->token()->revoke();**
+    **A. Auth::user()->token()->revoke();**
 
-    B. Auth::user()->revoke();
+      B. Auth::user()->revoke();
 
-    C. Auth::user()->token()->logout();
+      C. Auth::user()->token()->logout();
 
-    D. Auth::user()->logout();
+      D. Auth::user()->logout();
 
 15. Route yang digunakan untuk login adalah...
     
@@ -179,7 +180,7 @@
 
     C. PUT
 
-  **D. POST**
+    **D. POST**
 
 16. Maksud dari Route::post("/auth/logout","LoginController@logout")->middleware("auth:api") adalah...
     
@@ -187,7 +188,7 @@
     
     B. untuk memastikan bahwa user belum authentikasi dan sudah memiliki token
     
-  **C. untuk memastikan bahwa user sudah authentikasi dan sudah memiliki token**
+    **C. untuk memastikan bahwa user sudah authentikasi dan sudah memiliki token**
     
     D. untuk memastikan bahwa user belum authentikasi dan belum memiliki token
 
@@ -195,7 +196,7 @@
     
     A. Basic auth
     
-  **B. Bearer Token**
+    **B. Bearer Token**
     
     C. API key
      
@@ -209,11 +210,11 @@
     
     C. Content json/application
     
-  **D. Accept application/json**
+    **D. Accept application/json**
 
 19. Output apa yang akan terjadi saat kita mengakses 127.0.1:8000/user saat kita baru saja logout...
     
-   **A.message: "Unauthenticated."**
+    **A.message: "Unauthenticated."**
     
     B. message: "Undefinied."
     
