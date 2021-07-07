@@ -185,88 +185,145 @@
 ## Menginstall Preset Vue dan Menampilkan Component
 
 18. Berikut ini yang bukan merupakan type pada ui laravel adalah...
+    
     a. bootstrap
+    
     **b. angular**
+    
     c. react
+    
     d. vue
 
 19. Apa syarat yang harus di lakukan sebelum menjalankan perintah npm install & npm run dev?
+    
     **a. menginstall nodejs**
+    
     b. menginstall jquery
+    
     c. menginstall vue
+    
     d. menginstall bootstrap
 
 20. perintah untuk menjalankan component vuejs dan setiap ada perubahan otomatis akan berubah adalah...
+    
     a. npm run dev
+    
     b. npm run save
+    
     **c. npm run watch**
+    
     d. npm run serve
 
 21. Attribut apa yang ditambahkan untuk menjalankan script pada saat semua elemnt sudah di muat/load di dalam browser?
+    
     a. Beaver
+    
     b. River
+    
     **c. Defer**
+    
     d. Driver
 
 22. file vuejs terdapat di direktori?
+    
     a, public/js/components
+    
     b. public/css/components
+    
     c. resources/css/components
+    
     **d. resources/js/components**
 
 ## Membuat Struktur Folder Project Vue
+
 23. Modul-modul yang dibuat di simpan di di folder?
+    
     a. resources/js/components
+    
     **b. resources/js/app**
+    
     c. resources/js/route
+    
     d. resources/js/store
 
 24. Di folder mana state management disimpan?
+    
     a. route
+    
     b. components
+    
     **c. store**
+    
     d. app
 
 25. Pada masing-masing folder/direktori modul di isi kan file utama bernama?
+    
     a. app.js
+    
     b. main.js
+    
     c. home.js 
+    
     **d. index.js**
 
 26. Pada file mana components vue dapat diakses secara global?
+    
     **a. app.js**
+    
     b. main.js
+    
     c. home.js 
+    
     d. index.js
 
 ## Implementasi Vue Router pada Modular Component
 
 26. fitur-fitur vue router kecuali... 
+    
     a. cocok untuk modular
+    
     b. automatic css class
+    
     **c. efek transisi**
+    
     d. efek statis
 
 27. perintah untuk menginstall vue router adalah 
+    
     **a. npm install vue-router --save-dev**
+    
     b. npm install VueRouter --save-dev
+    
     c. npm install vue-router --dev-save
+    
     d. npm install VueRouter --dev-save
 
 28. authenticated: false pada meta arti nya?
+    
     a. halaman komponen hanya dapat diakses oleh user yang sudah authentikasi
+    
     b. halaman komponen tidak dapat diakses oleh user yang sudah registrasi
+    
     **c. halaman komponen hanya dapat diakses oleh user yang belum authentikasi**
+    
     d. halaman komponen tidak dapat diakses oleh user yang belum registrasi
 
 29. Untuk bisa menggunakan vue router perlu menuliskan syntax?
+    
     a. vue.component(VueRouter)
+    
     b. Vue(VueRouter)
+    
     **c. Vue.use(VueRouter)**
+    
     d. VueRouter(VueRouter)
 
 30. <router-view> berfungsi untuk?
+    
     a. Melihat semua isi router
+    
     **b. Komponen yang sudah diregistrasikan akan bisa diakses/tampil**
+    
     c. Bepindah dari satu komponen ke komponen yang lain
+    
     d. Bepindah dari satu komponen ke komponen yang lain tanpa reload/refresh
