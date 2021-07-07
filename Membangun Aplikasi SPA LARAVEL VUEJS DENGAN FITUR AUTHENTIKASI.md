@@ -284,9 +284,9 @@
     
     b. automatic css class
     
-    **c. efek transisi**
+    c. efek transisi
     
-    d. efek statis
+    **d. efek statis**
 
 27. perintah untuk menginstall vue router adalah 
     
