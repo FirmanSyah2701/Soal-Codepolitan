@@ -4,11 +4,11 @@
 
 1. Struktur project yang akan digunakan adalah...
     
-    a. Unscalble project
+    a. Unscalable project
     
     b. Unmodular project
     
-    **c. Scallable/modular project**
+    **c. Scalable/modular project**
     
     d. only modular project  
 
@@ -24,13 +24,13 @@
 
 3. Apa saja topik yang akan dipelajari?
     
-    **a. Laravel passport, Api Endpoint / Axios, Scallable / Modular, State Management x vuex**
+    **a. Laravel passport, Api Endpoint / Axios, Scalable / Modular, State Management x vuex**
     
-    b. Laravel sanctum, Api Endpoint / Axios, Scallable / Modular, State Management x vuex
+    b. Laravel sanctum, Api Endpoint / Axios, Scalable / Modular, State Management x vuex
     
-    c. Laravel passport, Api Endpoint / Axios, Unscallable / modular, State Management x vue router
+    c. Laravel passport, Api Endpoint / Axios, Unscalable / Modular, State Management x vue router
     
-    d. Laravel sanctum, Api Endpoint / Axios, Unscallable / Modular, State Management x vue router
+    d. Laravel sanctum, Api Endpoint / Axios, Unscalable / Modular, State Management x vue router
 
 ## SETUP PROJECT LARAVEL PASSPORT
 
@@ -204,7 +204,7 @@
     
     d. menginstall bootstrap
 
-20. perintah untuk menjalankan component vuejs dan setiap ada perubahan otomatis akan berubah adalah...
+20. Perintah untuk menjalankan component vuejs dan setiap ada perubahan otomatis akan berubah adalah...
     
     a. npm run dev
     
@@ -318,7 +318,7 @@
     
     d. VueRouter(VueRouter)
 
-30. <router-view> berfungsi untuk?
+30. router-view berfungsi untuk?
     
     a. Melihat semua isi router
     
