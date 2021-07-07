@@ -1,223 +1,183 @@
 # MEMBANGUN APLIKASI SPA LARAVEL VUEJS DENGAN FITUR AUTHENTIKASI
 
+## Perkenalan Laravel Vue SPA with Authentication
+
+1. Struktur project yang akan digunakan adalah...
+    
+    a. Unscalble project
+    
+    b. Unmodular project
+    
+    **c. Scallable/modular project**
+    
+    d. only modular project  
+
+2. Apa fungsi dari vuex?
+    
+    a. Sebagai authentikasi
+    
+    b. Sebagai akses API Endpoint
+    
+    c. Sebagai akses router
+    
+    **d. Sebagai State Management**
+
+3. Apa saja topik yang akan dipelajari?
+    
+    **a. Laravel passport, Api Endpoint / Axios, Scallable / Modular, State Management x vuex**
+    
+    b. Laravel sanctum, Api Endpoint / Axios, Scallable / Modular, State Management x vuex
+    
+    c. Laravel passport, Api Endpoint / Axios, Unscallable / modular, State Management x vue router
+    
+    d. Laravel sanctum, Api Endpoint / Axios, Unscallable / Modular, State Management x vue router
+
 ## SETUP PROJECT LARAVEL PASSPORT
 
-1. Apa yang dimaksud dengan laravel passport...
+4. Apa yang dimaksud dengan laravel passport...
 
-     **A. Package yang ada dilaravel untuk menghandle proses authentication dengan token.**
+    **a. Package yang ada dilaravel untuk menghandle proses authentication dengan token.**
 
-    B. Package yang ada dilaravel untuk menghandle proses authentication tanpa token
+    b. Package yang ada dilaravel untuk menghandle proses authentication tanpa token
 
-    C. Package yang ada dilaravel untuk menghandle proses authorization dengan token
+    c. Package yang ada dilaravel untuk menghandle proses authorization dengan token
 
-    D. Package yang ada dilaravel untuk menghandle proses authorization tanpa token
+    d. Package yang ada dilaravel untuk menghandle proses authorization tanpa token
 
-2. Package manager yang digunakan untuk membuat project baru di laravel adalah...
+5. Package manager yang digunakan untuk membuat project baru di laravel adalah...
     
-    A. NPM
+    a. NPM
     
-    B. PIP
+    b. PIP
     
-    **C. Composer**
+    **c. Composer**
     
-    D. GEMS
+    d. GEMS
 
-3. Perintah untuk membuat project baru dilaravel adalah...
+6. Perintah untuk membuat project baru dilaravel adalah...
     
-    A. Composer project-create laravel/laravel nama_project
+    a. Composer project-create laravel/laravel nama_project
 
-    B. Composer project-create laravel/nama_project
+    b. Composer project-create laravel/nama_project
     
-    **C. Composer create-project laravel/laravel nama_project**
+    **c. Composer create-project laravel/laravel nama_project**
     
-    D. Composer create-project laravel/nama_project 
+    d. Composer create-project laravel/nama_project 
 
 
-4. Cara menambahkan package laravel passport adalah...
+7. Cara menambahkan package laravel passport adalah...
     
-    A. Composer include laravel/passport
+    a. Composer include laravel/passport
     
-    B. Composer included laravel/passport
+    b. Composer included laravel/passport
     
-    C. Composer required laravel/passport
+    c. Composer required laravel/passport
     
-      **D. Composer require laravel/passport**
+    **d. Composer require laravel/passport**
 
 ## Api Endpoint Register
 
 
-5. Cara membuat RegisterController adalah...
+8. Cara membuat RegisterController adalah...
 
-    A. php artisan create:controller Api/Auth/RegisterController
+    a. php artisan create:controller Api/Auth/RegisterController
 
-    B. php artisan install:controller Api/Auth/RegisterController
+    b. php artisan install:controller Api/Auth/RegisterController
 
-    **C. php artisan make:controller Api/Auth/RegisterController**
+    **c. php artisan make:controller Api/Auth/RegisterController**
 
-    D. php artisan build:controller Api/Auth/RegisterController
+    d. php artisan build:controller Api/Auth/RegisterController
 
-6. Cara agar di dalam route laravel tidak perlu ditambahkan nama method setelah nama file controller adalah dengan fungsi...
 
-    A. register()
+9. Cara agar di dalam route laravel tidak perlu ditambahkan nama method setelah nama file controller adalah dengan fungsi...
 
-    **B. __invoke()**
+    a. register()
 
-    C. Invoke()
+    **b. __invoke()**
 
-    D. __construct()
+    c. Invoke()
 
-7. Fungsi untuk membuat data user baru di dalam database adalah...
-   
-    **A. User::create();**
+    d. __construct()
 
-    B. User::make();
-    
-    C. User::built();
-    
-    D. User::build();
 
-8. Syntax untuk menjalankan enkripsi password adalah...
+10. if(!Auth::attempt(request->only('email', 'password'))) adalah kondisi jika...
     
-    A. Hash::make($password);
+    a. Proses authentikasi success
     
-    B. Hash::create($password);
+    b. Proses authentikasi selesai
     
-    C. Hash::create($reques->password);
+    **c. Proses authentikasi failed**
     
-    **D. Hash::make($request->password);**
+    d. Proses authentikasi berhenti
 
-9. if(!Auth::attempt(request->only('email', 'password'))) adalah kondisi jika...
+11. Apa response status code dari Response::HTPP_UNPROCESSABLE_ENTITY...
     
-    A. Proses authentikasi success
+    a. 420
     
-    B. Proses authentikasi selesai
+    b. 421
     
-    **C. Proses authentikasi failed**
+    **c. 422**
     
-    D. Proses authentikasi berhenti
+    d. 423
 
-10. Apa response status code dari Response::HTPP_UNPROCESSABLE_ENTITY...
+12. Response status code 201 artinya...
     
-    A. 420
+    a. OK
     
-    B. 421
+    **b. Created**
     
-    **C. 422**
+    c. Server Error
     
-    D. 423
-
-11. Response status code 201 artinya...
-    
-    A. OK
-    
-    **B. Created**
-    
-    C. Server Error
-    
-    D. Not Found
+    d. Not Found
  
 ## Api Endpoint Login dan logout
 
-12. Isi data $request->validate() yang ada di method login adalah...
+13. Isi data $request->validate() yang ada di method login adalah...
     
-    **A. Email dan password**
+    **a. Email dan password**
 
-    B. Nama, Email dan Password
+    b. Nama, Email dan Password
 
-    C. Email saja
+    c. Email saja
 
-    D. Nama saja
-
-13. Isi response json login saat berhasil login adalah...
-    
-    A. return response([
-	    "message" => "success",
-	    "data" => $user;
-	    "meta" => [
-		    "token" => $accessToken
-	    ]
-        ], Response::HTPP_CREATED);
-    
-    **B. return response([
-	    "message" => "success",
-	    "data" => Auth::user();
-	    "meta" => [
-		    "token" => $accessToken
-	    ]
-        ], Response::HTPP_CREATED);**
-
-    C. return response([
-	    "message" => "success",
-	    "data" => $user;
-	    "meta" => [
-		"token" => $accessToken
-	    ]
-        ], Response::HTPP_UNPROCESSABLE_ENTITY);
-    
-    D. return response([
-	    "message" => "success",
-	    "data" => Auth::user();
-	    "meta" => [
-		"token" => $accessToken
-	    ]
-        ], Response::HTPP_UNPROCESSABLE_ENTITY);
+    d. Nama saja
 
 14. Syntax apa yang ada pada fungsi logout?
     
-    **A. Auth::user()->token()->revoke();**
+    **a. Auth::user()->token()->revoke();**
 
-      B. Auth::user()->revoke();
+    b. Auth::user()->revoke();
 
-      C. Auth::user()->token()->logout();
+    c. Auth::user()->token()->logout();
 
-      D. Auth::user()->logout();
+    d. Auth::user()->logout();
 
 15. Route yang digunakan untuk login adalah...
     
-    A. GET
+    a. GET
     
-    B. PATCH
+    b. PATCH
 
-    C. PUT
+    c. PUT
 
-    **D. POST**
+    **d. POST**
 
 16. Maksud dari Route::post("/auth/logout","LoginController@logout")->middleware("auth:api") adalah...
     
-    A. untuk memastikan bahwa user sudah authentikasi dan belum memiliki token
+    a. untuk memastikan bahwa user sudah authentikasi dan belum memiliki token
     
-    B. untuk memastikan bahwa user belum authentikasi dan sudah memiliki token
+    b. untuk memastikan bahwa user belum authentikasi dan sudah memiliki token
     
-    **C. untuk memastikan bahwa user sudah authentikasi dan sudah memiliki token**
+    **c. untuk memastikan bahwa user sudah authentikasi dan sudah memiliki token**
     
-    D. untuk memastikan bahwa user belum authentikasi dan belum memiliki token
+    d. untuk memastikan bahwa user belum authentikasi dan belum memiliki token
 
-17. Tipe authorisasi yang dipilih di POSTMAN saat menambahkan token dari laravel pssport adalah...
-    
-    A. Basic auth
-    
-    **B. Bearer Token**
-    
-    C. API key
+17. Apa yang di tambahkan di Headers pada postman untuk mengakses api endpoint login, logout dan user...
      
-    D. OAuth
-
-18. Apa yang di tambahkan di Headers pada postman untuk mengakses api endpoint login, logout dan user...
-     
-    A. Accept json/application 
+    a. Accept json/application 
     
-    B. Content application/json
+    b. Content application/json
     
-    C. Content json/application
+    c. Content json/application
     
-    **D. Accept application/json**
-
-19. Output apa yang akan terjadi saat kita mengakses 127.0.1:8000/user saat kita baru saja logout...
-    
-    **A.message: "Unauthenticated."**
-    
-    B. message: "Undefinied."
-    
-    C. message: "Unauthorization."
-    
-    D. message: "Success."
+    **d. Accept application/json**
