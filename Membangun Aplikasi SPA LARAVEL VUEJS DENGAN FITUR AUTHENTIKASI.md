@@ -318,7 +318,7 @@
     
     d. VueRouter(VueRouter)
 
-30. ```html <router-view> ``` berfungsi untuk?
+30. ```<router-view> ``` berfungsi untuk?
     
     a. Melihat semua isi router
     
@@ -332,11 +332,11 @@
 
 31. Cara memanggil component Navigation yang benar adalah 
     
-    a. ```html <Navigation></Navigation> ```
+    a. ```<Navigation></Navigation> ```
     
-    b. ```html <Navigation > ```
+    b. ```<Navigation > ```
     
-    **c. ```html <Navigation />```** 
+    **c. ```<Navigation />```** 
     
     d. Navigation
 
@@ -413,6 +413,7 @@
     d. CDN
 
 39. Syntax untuk menggunakan mapGetters adalah
+    
     **a. export default {
         computed: {
             ...mapGetters({
@@ -469,13 +470,13 @@
 
 42. Syntax untuk saat klik tombol submit akan mengarahkan ke method submit adalah
     
-    a. ```html <button onclick="submit"></button> ```
+    a. ```<button onclick="submit"></button> ```
 
-    b. ```html <button @click="submit"></button> ```
+    b. ```<button @click="submit"></button> ```
 
-    **c. ```html <form @submit.prevent="submit> ```**
+    **c. ```<form @submit.prevent="submit> ```**
 
-    d. ```html <form @submit.click="submit> ```
+    d. ```<form @submit.click="submit> ```
 
 43. Method untuk menyimpan state pada inputan adalah
 
@@ -542,6 +543,7 @@
 ## Membuat Halaman Login dan Error Form Validation
 
 49. Syntax untuk menambah pesan error di json adalah
+    
     **a. return response()->json([
         'meesage' => 'Authentication is invalid,
         'errors' => [
