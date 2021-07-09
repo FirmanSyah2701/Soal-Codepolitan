@@ -56,24 +56,24 @@
 
 6. Perintah untuk membuat project baru dilaravel adalah...
     
-    a. Composer project-create laravel/laravel nama_project
+    a. composer project-create laravel/laravel nama_project
 
-    b. Composer project-create laravel/nama_project
+    b. composer project-create laravel/nama_project
     
-    **c. Composer create-project laravel/laravel nama_project**
+    **c. composer create-project laravel/laravel nama_project**
     
-    d. Composer create-project laravel/nama_project 
+    d. composer create-project laravel/nama_project 
 
 
 7. Cara menambahkan package laravel passport adalah...
     
-    a. Composer include laravel/passport
+    a. composer include laravel/passport
     
-    b. Composer included laravel/passport
+    b. composer included laravel/passport
     
-    c. Composer required laravel/passport
+    c. composer required laravel/passport
     
-    **d. Composer require laravel/passport**
+    **d. composer require laravel/passport**
 
 ## Api Endpoint Register
 
@@ -134,7 +134,7 @@
 
 13. Isi data $request->validate() yang ada di method login adalah...
     
-    **a. Email dan password**
+    **a. Email dan Password**
 
     b. Nama, Email dan Password
 
@@ -164,13 +164,13 @@
 
 16. Maksud dari Route::post("/auth/logout","LoginController@logout")->middleware("auth:api") adalah...
     
-    a. untuk memastikan bahwa user sudah authentikasi dan belum memiliki token
+    a. Untuk memastikan bahwa user sudah authentikasi dan belum memiliki token
     
-    b. untuk memastikan bahwa user belum authentikasi dan sudah memiliki token
+    b. Untuk memastikan bahwa user belum authentikasi dan sudah memiliki token
     
-    **c. untuk memastikan bahwa user sudah authentikasi dan sudah memiliki token**
+    **c. Untuk memastikan bahwa user sudah authentikasi dan sudah memiliki token**
     
-    d. untuk memastikan bahwa user belum authentikasi dan belum memiliki token
+    d. Untuk memastikan bahwa user belum authentikasi dan belum memiliki token
 
 17. Apa yang di tambahkan di Headers pada postman untuk mengakses api endpoint login, logout dan user...
      
@@ -186,23 +186,23 @@
 
 18. Berikut ini yang bukan merupakan type pada ui laravel adalah...
     
-    a. bootstrap
+    a. Bootstrap
     
-    **b. angular**
+    **b. Angular**
     
-    c. react
+    c. React
     
-    d. vue
+    d. Vue
 
 19. Apa syarat yang harus di lakukan sebelum menjalankan perintah npm install & npm run dev?
     
-    **a. menginstall nodejs**
+    **a. Menginstall nodejs**
     
-    b. menginstall jquery
+    b. Menginstall jquery
     
-    c. menginstall vue
+    c. Menginstall vue
     
-    d. menginstall bootstrap
+    d. Menginstall bootstrap
 
 20. Perintah untuk menjalankan component vuejs dan setiap ada perubahan otomatis akan berubah adalah...
     
@@ -216,13 +216,13 @@
 
 21. Attribut apa yang ditambahkan untuk menjalankan script pada saat semua elemnt sudah di muat/load di dalam browser?
     
-    a. Beaver
+    a. beaver
     
-    b. River
+    b. river
     
-    **c. Defer**
+    **c. defer**
     
-    d. Driver
+    d. driver
 
 22. file vuejs terdapat di direktori?
     
@@ -280,13 +280,13 @@
 
 26. fitur-fitur vue router kecuali... 
     
-    a. cocok untuk modular
+    a. Cocok untuk modular
     
-    b. automatic css class
+    b. Automatic css class
     
-    c. efek transisi
+    c. Efek transisi
     
-    **d. efek statis**
+    **d. Efek statis**
 
 27. perintah untuk menginstall vue router adalah 
     
@@ -300,17 +300,17 @@
 
 28. authenticated: false pada meta arti nya?
     
-    a. halaman komponen hanya dapat diakses oleh user yang sudah authentikasi
+    a. Halaman komponen hanya dapat diakses oleh user yang sudah authentikasi
     
-    b. halaman komponen tidak dapat diakses oleh user yang sudah registrasi
+    b. Halaman komponen tidak dapat diakses oleh user yang sudah registrasi
     
-    **c. halaman komponen hanya dapat diakses oleh user yang belum authentikasi**
+    **c. Halaman komponen hanya dapat diakses oleh user yang belum authentikasi**
     
-    d. halaman komponen tidak dapat diakses oleh user yang belum registrasi
+    d. Halaman komponen tidak dapat diakses oleh user yang belum registrasi
 
 29. Untuk bisa menggunakan vue router perlu menuliskan syntax?
     
-    a. vue.component(VueRouter)
+    a. Vue.component(VueRouter)
     
     b. Vue(VueRouter)
     
@@ -318,7 +318,7 @@
     
     d. VueRouter(VueRouter)
 
-30. router-view berfungsi untuk?
+30. ```html <router-view> ``` berfungsi untuk?
     
     a. Melihat semua isi router
     
@@ -327,3 +327,362 @@
     c. Bepindah dari satu komponen ke komponen yang lain
     
     d. Bepindah dari satu komponen ke komponen yang lain tanpa reload/refresh
+
+## Membuat Modul Baru dan Component Navigasi
+
+31. Cara memanggil component Navigation yang benar adalah 
+    
+    a. ```html <Navigation></Navigation> ```
+    
+    b. ```html <Navigation > ```
+    
+    **c. ```html <Navigation />```** 
+    
+    d. Navigation
+
+32. File untuk meregistrasikan seluruh components pada modul adalah?
+    
+    a. components.js
+    
+    b. state.js
+
+    c. app.js
+
+    **d. index.js** 
+
+33. cara menambahkan home di router utama adalah 
+    
+    a. const routes = [home];
+    
+    b. const routes = [.home];
+    
+    c. const routes = [..home];
+    
+    **d. const routes = [...home];**
+
+34. cara melihat hasil variable const route di vuejs adalah 
+    
+    a. print(routes);
+    
+    **b. console.log(routes);**
+
+    c. return routes;
+
+    d. {{ routes }}
+
+## Installasi dan Pengenalan Vuex
+
+35. Cara umum mengirimkan data antar components tanpa vuex bisa mengguakan?
+    
+    a. computed
+    
+    b. data
+    
+    **c. props**
+    
+    d. methods
+
+36. Pengertian Vuex adalah
+
+    a. router management pattern
+
+    **b. state management pattern**
+
+    c. share management pattern
+
+    d. modular management pattern
+    
+37. Macam-macam file yang ada pada direktori modul store kecuali 
+    
+    a. actions
+    
+    b. mutations
+    
+    c. state
+    
+    **d. setters**
+
+38. Cara menginstall vuex dapat dilakukan dengan via kecuali
+    
+    a. Yarn
+    
+    **b. Composer**
+    
+    c. NPM
+    
+    d. CDN
+
+39. Syntax untuk menggunakan mapGetters adalah
+    **a. export default {
+        computed: {
+            ...mapGetters({
+                user: "auth/user"
+            });
+        }
+    }**
+
+    b. export default {
+        compute: {
+            ...mapGetters({
+                user: "auth/user"
+            });
+        }
+    }
+
+    c. export default {
+        components: {
+            ...mapGetters({
+                user: "auth/user"
+            });
+        }
+    }
+
+    d. export default {
+        component: {
+            ...mapGetters({
+                user: "auth/user"
+            });
+        }
+    }
+
+## Registrasi Menggunakan Vue
+
+40. Pada file mana yang mengatur request API Endpoint?
+
+    a. state.js
+
+    b. mutators.js
+
+    **c. actions.js**
+
+    d. getters.js
+
+41. Fungsi parameter dispatch pada file actions.js adalah
+
+    a. Untuk mengirimkan request
+
+    b. Untuk mengambil request
+
+    c. Untuk memanggil method diluar file actions.js
+
+    **d. Untuk memanggil method yang ada pada file actions.js**
+
+42. Syntax untuk saat klik tombol submit akan mengarahkan ke method submit adalah
+    
+    a. ```html <button onclick="submit"></button> ```
+
+    b. ```html <button @click="submit"></button> ```
+
+    **c. ```html <form @submit.prevent="submit> ```**
+
+    d. ```html <form @submit.click="submit> ```
+
+43. Method untuk menyimpan state pada inputan adalah
+
+    **a. data**
+
+    b. methods
+
+    c. mapActions
+
+    d. submit
+
+44. mendapatkan method pada file actions dari berbagai modul menggunakan fungsi
+
+    a. data
+
+    b. methods
+
+    **c. mapActions**
+
+    d. submit
+
+## Menampilkan Error Message Form di Vue
+
+45. Parameter apa yang digunakan untuk mengisi data error?
+    
+    a. dispatch
+    
+    b. commit
+    
+    c. payload
+    
+    **d. context**
+
+46. Isi context agar dapat mengambil property dari objek errors adalah
+    
+    a. this.context
+
+    b. this.error
+
+    c. this.erros
+
+    **d. this**
+
+47. Untuk menampilkan pesan error pada syntax input perlu ditambahkan directive class?
+
+    a. not-invalid
+    
+    b. not-valid
+    
+    **c. is-invalid**
+    
+    d. is-valid
+
+48. cara untuk memanggil data error email adalah
+    
+    a. {{ $errors.email[0] }}
+
+    **b. {{ errors.email[0] }}**
+
+    b. {{ $error.email[0] }}
+
+    b. {{ error.email[0] }} 
+
+## Membuat Halaman Login dan Error Form Validation
+
+49. Syntax untuk menambah pesan error di json adalah
+    **a. return response()->json([
+        'meesage' => 'Authentication is invalid,
+        'errors' => [
+            'root' => 'Could not sign in with those details'
+        ] 
+    ]);**
+
+    b. return response()->json([
+        'meesage' => 'Authentication is invalid,
+        'errors' => {
+            'root' => 'Could not sign in with those details'
+        }
+    ]);
+
+    c. return response()->json([
+        'meesage' => 'Authentication is invalid,
+        'root' => [
+            'error' => 'Could not sign in with those details'
+        ]
+    ]);
+
+    d. return response()->json([
+        'meesage' => 'Authentication is invalid,
+        'root' => {
+            errors => 'Could not sign in with those details'
+        }
+    ]);
+
+50. Syntax yang benar untuk membuat fungsi request login pada actions,js adalah
+        
+    a.  export const login({}, {payload,context}) => {
+            return axios
+            .get("/api/auth/login")
+            .then(() => {
+                console.log(result.data);
+            }).catch((err) => {
+                context.errors = err.response.data.errors;
+            })
+        }
+
+    b.  **export const login({}, {payload,context}) => {
+            return axios
+            .post("/api/auth/login")
+            .then(() => {
+                console.log(result.data);
+            }).catch((err) => {
+                context.errors = err.response.data.errors;
+            })
+        }**
+
+    c.  export const login({}, {payload,context}) => {
+            return axios
+            .get("/api/auth/login")
+            .then(() => {
+                context.errors = err.response.data.errors;
+            }).catch((err) => {
+                console.log(result.data);
+            })
+        }
+
+    d.  export const login({}, {payload,context}) => {
+            return axios
+            .post("/api/auth/login")
+            .then(() => {
+                context.errors = err.response.data.errors;
+            }).catch((err) => {
+                console.log(result.data);
+            })
+        }
+}
+
+51. Saat request berhasil maka method yang dijalankan pada axios adalah
+    a. post()
+    
+    b. get()
+    
+    **c. then()**
+    
+    d. catch()
+
+52. Saat request gagal maka method yang dijalankan pada axios adalah...
+    
+    a. post()
+    
+    b. get()
+    
+    c. then()
+    
+    **d. catch()**
+
+## Menyimpan Token di LocalStorage dan Setup Headers Authorization
+
+53. Suatu token biasa nya disimpan didalam...
+    
+    a. server
+
+    b. memory
+
+    c. cloud
+
+    **d. localStorage**
+
+54. File mana yang mengatur token disimpan di dalam localStorage
+
+    a. state.js
+
+    **b. mutators.js**
+
+    c. actions.js
+
+    d. getters.js
+    
+55. isEmpty adalah fungsi dari package?
+    
+    a. vue
+    
+    b. vuex
+    
+    c. vue-router
+    
+    **d. lodash**
+
+56. Parameter apa yang digunakan pada method yang ada di file actions.js untuk memanggil mutations
+    
+    a. dispatch
+    
+    **b. commit**
+    
+    c. payload
+    
+    d. context
+
+57. Syntax apa yang perlu di tulis pada helpers index.js saat melakukan pengecekan ternyata memiliki akses token
+    
+    a. window.axios.defaults.header.common["Authentication"] = "Bearer " + token;
+    
+    b. window.axios.defaults.header.common["Authentication"] = null; 
+    
+    **c. window.axios.defaults.header.common["Authorization"] = "Bearer " + token;**
+    
+    d. window.axios.defaults.header.common["Authorization"] = null;
+
+
+## Menyimpan Data Auth pada State dan Redirect
