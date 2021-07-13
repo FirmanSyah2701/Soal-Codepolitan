@@ -584,6 +584,7 @@
             }).catch((err) => {
                 context.errors = err.response.data.errors;
             })
+        }
         
     **b.  export const login({}, {payload,context}) => {
             return axios
@@ -614,7 +615,6 @@
                 console.log(result.data);
             })
         }
-}
 ```
 
 51. Saat request berhasil maka method yang dijalankan pada axios adalah...
@@ -804,13 +804,13 @@
 
 68. Fitur intended redirect adalah
     
-    **a. route terakhir yang memerlukan authentication setelah berhasil mengarahkan kehalaman yang diminta**
+    **a. Route terakhir yang memerlukan authentication setelah berhasil mengarahkan kehalaman yang diminta**
     
-    b. route terakhir yang tidak memerlukan authentication setelah berhasil mengarahkan kehalaman yang diminta
+    b. Route terakhir yang tidak memerlukan authentication setelah berhasil mengarahkan kehalaman yang diminta
 
-    c. router yang memerlukan authentication sebelum berhasil mengarahkan kehalaman yang diminta
+    c. Router yang memerlukan authentication sebelum berhasil mengarahkan kehalaman yang diminta
 
-    d. router yang memerlukan authentication sebelum berhasil mengarahkan kehalaman yang diminta
+    d. Router yang memerlukan authentication sebelum berhasil mengarahkan kehalaman yang diminta
 
 69. Apa isi value dari intended? 
     
