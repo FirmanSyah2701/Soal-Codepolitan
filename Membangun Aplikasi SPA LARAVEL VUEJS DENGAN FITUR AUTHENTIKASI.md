@@ -413,7 +413,7 @@
     d. CDN
 
 39. Syntax untuk menggunakan mapGetters adalah
-    
+```    
     **a. export default {
         computed: {
             ...mapGetters({
@@ -421,7 +421,7 @@
             });
         }
     }**
-
+    
     b. export default {
         compute: {
             ...mapGetters({
@@ -445,6 +445,7 @@
             });
         }
     }
+```
 
 ## Registrasi Menggunakan Vue
 
@@ -543,7 +544,7 @@
 ## Membuat Halaman Login dan Error Form Validation
 
 49. Syntax untuk menambah pesan error di json adalah
-    
+```    
     **a. return response()->json([
         'meesage' => 'Authentication is invalid,
         'errors' => [
@@ -571,9 +572,10 @@
             errors => 'Could not sign in with those details'
         }
     ]);
+```
 
-50. Syntax yang benar untuk membuat fungsi request login pada actions,js adalah
-        
+50. Syntax yang benar untuk membuat fungsi request login pada actions.js adalah
+```    
     a.  export const login({}, {payload,context}) => {
             return axios
             .get("/api/auth/login")
@@ -582,9 +584,8 @@
             }).catch((err) => {
                 context.errors = err.response.data.errors;
             })
-        }
-
-    b.  **export const login({}, {payload,context}) => {
+        
+    **b.  export const login({}, {payload,context}) => {
             return axios
             .post("/api/auth/login")
             .then(() => {
@@ -614,8 +615,9 @@
             })
         }
 }
+```
 
-51. Saat request berhasil maka method yang dijalankan pada axios adalah
+51. Saat request berhasil maka method yang dijalankan pada axios adalah...
     a. post()
     
     b. get()
@@ -646,7 +648,7 @@
 
     **d. localStorage**
 
-54. File mana yang mengatur token disimpan di dalam localStorage
+54. File mana yang mengatur token disimpan di dalam localStorage?
 
     a. state.js
 
@@ -666,7 +668,7 @@
     
     **d. lodash**
 
-56. Parameter apa yang digunakan pada method yang ada di file actions.js untuk memanggil mutations
+56. Parameter apa yang digunakan pada method yang ada di file actions.js untuk memanggil mutations?
     
     a. dispatch
     
@@ -676,7 +678,7 @@
     
     d. context
 
-57. Syntax apa yang perlu di tulis pada helpers index.js saat melakukan pengecekan ternyata memiliki akses token
+57. Syntax apa yang perlu di tulis pada helpers index.js saat melakukan pengecekan ternyata memiliki akses token?
     
     a. window.axios.defaults.header.common["Authentication"] = "Bearer " + token;
     
@@ -688,3 +690,238 @@
 
 
 ## Menyimpan Data Auth pada State dan Redirect
+
+58. Untuk mengubah state tidak bisa secara langsung di file state.js cara merubah nya ialah...
+    
+    **a. Membuat fungsi di dalam file mutations.js lalu membuat fungsi lagi di dalam actions.js dimana fungsi actions.js ini akan diakses di component**
+    
+    b. Membuat fungsi di dalam file actions.js lalu membuat fungsi lagi di dalam mutations.js, dimana fungsi mutations.js ini akan diakses di component
+    
+    c. Membuat fungsi di dalam file actions.js lalu membuat fungsi lagi di dalam getters.js dimana fungsi getters.js ini akan diakses di component
+     
+    d. Membuat fungsi di dalam file getters.js lalu membuat fungsi lagi di dalam actions.js dimana fungsi actions.js ini akan diakses di component
+
+59. Apa fungsi dari syntax 
+    ```
+        export const setAutheticaticated = (state, trueOrFalse){
+            state.user.authenticated = trueOrFalse
+        } 
+    ```
+
+    a. Untuk merubah data authenticated menjadi true ketika user login dan false ketika user logout
+    
+    b. Untuk merubah data authenticated menjadi false ketika user login dan true ketika user logout
+    
+    c. Untuk merubah data authenticated menjadi true ketika user register dan false ketika user logout
+    
+    **d. A dan C benar**
+
+60. Syntax untuk mengubah lokasi router/component yang benar adalah
+    
+    a. this.$router.replace(name: 'home');
+
+    b. this.router.replace(name: 'home');
+
+    **c. this.$router.replace({name: 'home'});**
+
+    d. this.router.replace({name: 'home'});
+
+61. dispatch("fetchUser", result.data) dari mana data tersebut
+    
+    a. Dari data axios
+    
+    **b. Dari hasil response objek user**
+    
+    c. Dari database
+    
+    d. Dari parameter
+
+## Mengakses API Endpoint User dan Menyimpan Datanya pada State
+
+62. Cara mengatasi saat refresh data state user hilang sehingga mengakibatkan fungsi login/register kembali ketampilan semula adalah 
+    
+    **a. Selalu mengecek data dari user melalui token**
+    
+    b. Mengecek satu kali data user pada saat login
+    
+    c. Mengecek satu kali data user pada saat register
+
+    d. B dan C benar
+
+63. Commit yang bukan dipanggil pada fungsi removeToken() ialah....
+    
+    a. setAuthenticated
+    
+    b. setUserData
+    
+    c. setToken
+    
+    **d. fetchUser**
+
+64. Apa yang di return bila token null?
+    
+    **a. return Promise.reject("No_STORAGE_FOUND");**
+    
+    b. return Promise.eject("No_STORAGE_FOUND");
+    
+    c. return Promise.resolve(token);
+    
+    d. return Promise.solve(token);
+
+## Cara Mengamankan Router pada Suatu Component
+
+65. Saat token di remove pada halaman profile kemudian direfesh dan ternyata masih bisa diakses, bagaimana solusi nya
+    
+    **a. Pada router utama sebelum export default menambahkan method berforEach();**
+    
+    b. Pada router utama sesudah export default menambahkan method berforEach();
+    
+    c. Pada setiap router modul sebelum export default menambahkan method berforEach();
+    
+    d. Pada setiap router modul sesudah export default menambahkan method berforEach();
+
+66. Method yang bertugas sebgai middleware, sebelum mengakses component mengecek router apakah sudah sesuai dengan kriteria disebut?
+    
+    a. dispatch()
+    
+    b. commit()
+    
+    c. next()
+    
+    **d. beforeEach()**
+
+67. Yang bukan merupakan parameter dari beforeEach adalah 
+    
+    a. to
+    
+    b. from
+    
+    c. next
+    
+    **d. prev**
+
+## Membuat Fungsi Redirect Halaman Sebelumnya
+
+68. Fitur intended redirect adalah
+    
+    **a. route terakhir yang memerlukan authentication setelah berhasil mengarahkan kehalaman yang diminta**
+    
+    b. route terakhir yang tidak memerlukan authentication setelah berhasil mengarahkan kehalaman yang diminta
+
+    c. router yang memerlukan authentication sebelum berhasil mengarahkan kehalaman yang diminta
+
+    d. router yang memerlukan authentication sebelum berhasil mengarahkan kehalaman yang diminta
+
+69. Apa isi value dari intended? 
+    
+    **a. Berisi nama router yang diminta saat melakukan login**
+
+    b. Berisi nama component
+
+    c. Berisi data token
+
+    d. Berisi data user
+
+70. localStorage.setItem("intended", to.name); adalah 
+
+    a. Untuk menyimpan nama route saat diarahkan ke home sebelumnya akan menyimpan data intended 
+
+    b. Untuk menyimpan nama route saat diarahkan ke home selanjutnya akan menyimpan data intended
+
+    **c. Untuk menyimpan nama route saat diarahkan ke login sebelumnya akan menyimpan data intended**
+
+    d. Untuk menyimpan nama route saat diarahkan ke login selanjutnya akan menyimpan data intended
+
+71. Syntax untuk mendapatkan route inteded adalah 
+
+    a. localStorage.setItem("itended");
+
+    **b. localStorage.getItem("itended");**
+
+    c. localStorage.setItem("itended", to.name);
+    
+    d. localStorage.getItem("itended", to.name);
+
+72. Di file mana kita perlu menambahkan fitur intended
+    
+    a. index.js, Login.vue
+    
+    b. index.js, Register.vue
+
+    **c. beforeEach.js, Login.vue**
+    
+    d. beforeEach.js, Register.vue
+
+## Mengatasi Request Page Not Found
+
+73. Path untuk halaman 404 atau not found ialah
+    
+    **a. (*)**
+    
+    b. (&)
+    
+    c. (.)
+    
+    d. (/)
+
+74. Modul errors harus di tambahkan di variable routes dibagian
+    
+    a. Depan
+    
+    b. Tengah
+    
+    c. Bebas dimana saja
+    
+    **d. Akhir**
+
+75. Apa yang akan terjadi bila modul error ditambahkan di bagian awal vairbale routes
+    
+    **a. Setiap url/component yang terdaftar akan mengarahkan kehalaman 404/not found**
+
+    b. Setiap url/component yang tidak terdaftar akan mengarahkan kehalaman 404/not found
+
+    c. Tidak terjadi apa-apa
+
+    d. Semua url tidak bisa diakses
+
+## Implementasi Fungsi Logout
+
+76. Apa yang di dispatch pada fungsi logout ?
+    
+    a. emptyToken 
+
+    b. deleteToken
+
+    c. destroyToken
+
+    **d. removeToken**
+
+77. Apa yang perlu di import untuk bisa logout di Navigation.vue? 
+    
+    a. mapGetters
+    
+    **b. mapActions**
+    
+    c. beforeEach
+    
+    d. isEmpty
+
+78. Syntax yang benar untuk membuat fungsi logout adalah
+
+```
+    **a. axios.post("api/auth/logout").then(() => {
+        dispatch("removeToken");
+    })**
+
+    b. axios.get("api/auth/logout").then(() => {
+        dispatch("removeToken");
+    })
+
+    c. axios.post("api/auth/logout").then(() => {
+        dispatch("setToken", null);
+    })
+
+    d. axios.get("api/auth/logout").then(() => {
+        dispatch("setToken", null);
+    })
+```
