@@ -1,4 +1,4 @@
-## Membuat Alert di Flutter
+# Membuat Alert di Flutter
 
 Halo, teman-teman pada artikel kali ini kita akan membahas bagaimana cara untuk membuat alert di flutter Pertama-tama siapkan Text Editor atau IDE teman-teman disini saya menggunakan Text Editor Visual Studio Code dan buat project baru flutter dan beri nama project dengan alert.
 
