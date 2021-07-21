@@ -108,7 +108,7 @@
 
 11. salah satu fitur untuk membuat data reactive adalah
     
-    a. ref()
+    **a. ref()**
 
     b. refs()
 
