@@ -94,7 +94,7 @@
 
     d. A dan C benar
 
-10. syntax untuk mencetak/menampilkan variable adalah
+10. Syntax untuk mencetak/menampilkan variable adalah
 
     **a. {{ name }}**
 
@@ -142,20 +142,119 @@
 
     b. bisa menggunakan this juga
 
-    c. menggunakan .value sebelum variable
+    c. menggunakan value sebelum variable
 
-    **d. menggunakan .value setelah variable**
+    **d. menggunakan value setelah variable**
 
 15. untuk mengubah seluruh text di dalam tag p adalah
     
-    a. p.value.classList("isi teks");
+    a. p.value.classList("isi teks")
 
-    b. p.value.textList("isi teks");
+    b. p.value.textList("isi teks")
 
-    c. p.value.classContent("isi teks");
+    c. p.value.classContent("isi teks")
 
-    **d. p.value.textContent("isi teks");**
+    **d. p.value.textContent("isi teks")**
 
 ## Memanfaatkan Ref Untuk Data Reactive
 
+16. Syntax yang benar untuk menampung objek di dalam ref adalah
+
+    a. ref(name: 'Fulan', number: '08343242')
+    
+    b. ref([name: 'Fulan', number: '08343242'])
+
+    **c. ref({name: 'Fulan', number: '08343242'})**
+
+    d. ref((name: 'Fulan', number: '08343242'))
+
+17. Dimana value dapat bekerja?
+
+    a. di dalam template
+
+    **b. di dalam fungsi setup**
+
+    c. di dalam fungsi data
+
+    d. a dan b benar
+
+18. Apa saja kelebihan dari fungsi ref
+
+    a. Dapat membuat data menjadi reactive
+
+    b. Dapat menyimpan objek
+
+    c. Dapat langsung memanggil nilai yang diinputkan 
+
+    **d. Semua benar**
+
 ## Membandingkan Fungsi Ref Dengan Reactive
+
+19. Perbedaan cara mengubah data contact di ref dan reactive adalah
+
+    **a. ref: contact.value.name = 'Luna', reactive: contact.name = 'Luna'**
+
+    b. ref: contact.name = 'Luna', reactive: contact.value.name = 'Luna'
+
+    c. ref: contact.name.value = 'Luna', reactive: contact.name = 'Luna'
+
+    d. ref: contact.name = 'Luna', reactive: contact.name.value = 'Luna'
+
+
+20. Salah satu kelemahan dari reactive 
+
+    a. tidak bisa mengubah data secara realtime
+
+    **b. tidak bisa mengubah data primitive**
+    
+    c. tidak bisa mengubah method secara realtime
+
+    d. a dan c benar
+
+21. Syntax yang benar untuk menampung objek di dalam reactive adalah
+
+    a. reactive(name: 'Yanie', number: '0932424')
+    
+    b. reactive([name: 'Yanie', number: '0932424'])
+
+    **c. reactive({name: 'Yanie', number: '0932424'})**
+
+    d. reactive((name: 'Yanie', number: '0932424'))
+
+## Manipulasi Data Dengan Computed Property
+
+22. Cara menggunakan v-for untuk memanggil data names di dalam template adalah
+
+    a. ``<div v-for="name in names" :key="name">{{ name }} </div>``
+
+    b. ``<div v-for="names in name" :key="name">{{ name }} </div>``
+
+    c. ``<div v-for="(name, index) in names" :key="index">{{ name }} </div>``
+
+    **d. A dan C benar**
+
+23. Fungsi untuk menampilkan nama sesuai dengan keyword yang kita ketikkan adalah
+
+    a. filter
+
+    b. search
+
+    c. include
+
+    **d. includes**
+
+24. Berikut ini yang merupakan penggunaan computed di Composition API dengan benar adalah
+
+    a. computed(): {
+        return names.value
+    }
+
+    b. const names = computed(() => return names) 
+
+    **c. const resultSearch = computed(() => {
+        return names.value
+    })**
+
+    d. const resultSearch = computed(() => {
+        return names
+    })
