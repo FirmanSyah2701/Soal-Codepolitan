@@ -213,13 +213,13 @@
 
 21. Syntax yang benar untuk menampung objek di dalam reactive adalah
 
-    a. reactive(name: 'Yanie', number: '0932424')
+    a.  ``reactive(name: 'Yanie', number: '0932424')``
     
-    b. reactive([name: 'Yanie', number: '0932424'])
+    b.  ``reactive([name: 'Yanie', number: '0932424'])``
 
-    **c. reactive({name: 'Yanie', number: '0932424'})**
+    **c. ``reactive({name: 'Yanie', number: '0932424'})``**
 
-    d. reactive((name: 'Yanie', number: '0932424'))
+    d. ``reactive((name: 'Yanie', number: '0932424'))``
 
 ## Manipulasi Data Dengan Computed Property
 
@@ -245,16 +245,208 @@
 
 24. Berikut ini yang merupakan penggunaan computed di Composition API dengan benar adalah
 
-    a. computed(): {
+    a. 
+    ```
+    computed(): {
         return names.value
     }
+    ```
 
-    b. const names = computed(() => return names) 
+    b. ``const names = computed(() => return names) ``
 
-    **c. const resultSearch = computed(() => {
+    **c. 
+    ```
+        const resultSearch = computed(() => {
         return names.value
-    })**
+    })
+    ```
+    **
 
-    d. const resultSearch = computed(() => {
+    d. 
+    ```
+    const resultSearch = computed(() => {
         return names
     })
+    ```
+
+## Memantau Perubahan Data Dengan Watch
+
+25. Apa fungsi dari watch?
+    
+    **a. untuk memeriksa data yang dimiiki secara realtime** 
+    
+    b. untuk melakukan suatu perubahan pada data
+
+    c. untuk memeriksa data dan fungsi
+
+    d. B dan C benar
+
+26. ```
+    watch(search, () => {
+        console.log('fungsi berjalan')
+    })
+    ```
+
+    fungsi tersebut akan berjalan pada saat...
+    
+    a. Halaman pertama kali dimuat
+
+    b. Sebelum mengetikkan inputan search
+
+    **c. Mengetikkan inputan search**
+
+    d. Setelah mengetikkan inputan search
+
+27. Perbedaan watch dengan watchEffect ialah
+    
+    a. watch berjalan satu kali saat data terjadi perubahan 
+       sedangkan watchEffect berjalan terus dari awal componen di muat hingga akhir
+    
+    b. watch berjalan terus dari awal componen di muat hingga akhir 
+       sedangkan watchEffect berjalan satu kali saat data terjadi perubahan 
+    
+    c. watch berjalan secara otomatis saat componen pertama kali di muat sedangkan watchEffect berjalan saat data terjadi perubahan
+    
+    **d. watch  berjalan saat data terjadi perubahan sedangkan watchEffect berjalan secara otomatis saat componen pertama kali di muat**
+
+29. cara memberhentikan watch adalah
+    
+    a.  
+        ```
+        const stop = watch(search(), {
+            console.log('fungsi watch berjalan')
+        })
+
+        const handleClick = () => {
+            stop();
+        }
+        ```
+    
+    **b. 
+        ```
+        const stop = watch(search, () {
+            console.log('fungsi watch berjalan')
+        })
+
+        const handleClick = () => {
+            stop();
+        }
+        ```
+    **
+
+    c. 
+        ```
+        const stop = watch(search(), {
+            console.log('fungsi watch berjalan')
+        })
+
+        const handleClick => ({
+            stop();
+        })
+        ```
+
+    d. 
+        ```
+        const stop = watch(search, () {
+            console.log('fungsi watch berjalan')
+        })
+
+        const handleClick => ({
+            stop();
+        })
+        ```
+
+## Menggunakan Props Di Composition API
+
+30. Cara menangkap data props adalah
+    
+    **a. ``props: ['posts']``**
+    
+    b. ``props = ['posts']``
+    
+    c. ``props: 'posts'``
+    
+    d. ``props = 'posts'``
+
+31. Cara memanggil data props posts di dalam setup function adalah
+    a. 
+    ```
+    setup() {
+        console.log(props)
+    }
+    ```
+    b. 
+    ```
+    setup(props) {
+        console.log(props)
+    }
+    ```
+
+    c. 
+    ```
+    setup() {
+        console.log(props.posts)
+    }
+    ```
+
+    **d. 
+    ```
+    setup(props) {
+        console.log(props.posts)
+    }
+    ```
+    **
+
+32. Untuk memanipulasi data props perlu menggunakan fungsi
+
+    a. methods
+
+    b. substring
+
+    **c. computed**
+
+    d. mounted
+
+33. untuk memotong string karakter kita dapat menggunakan fungsi
+
+    a. methods
+
+    **b. substring**
+
+    c. computed
+
+    d. mounted
+
+## Implementasi Lifecycle Hooks Vue 3
+
+34. onMounted berjalan saat...
+
+    **a. component tersebut dimuat atau dijalankan**
+
+    b. component tersebut dilepaskan
+
+    c. component terjadi suatu perubahan 
+
+    d. b dan c benar
+
+35. onUpdated berjalan saat..
+
+    a. component terjadi penambahan data
+
+    b. componen terjadi perubahan data
+
+    c. componen terjadi penghapusan data
+
+    **d. a, b dan c benar**
+
+36. Berikut yang bukan merupakan lifecycle hooks di dalam vue adalah 
+    
+    a. onMonted
+
+    b. onUnMounted
+
+    **c. onChange**
+
+    d. onUpdated
+
+## Membuat Fake REST API dan Mencoba Async Await
