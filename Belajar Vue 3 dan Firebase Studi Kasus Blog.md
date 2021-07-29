@@ -281,7 +281,8 @@
 
     d. B dan C benar
 
-26. ```
+26. 
+    ```
     watch(search, () => {
         console.log('fungsi berjalan')
     })
@@ -312,49 +313,49 @@
 29. cara memberhentikan watch adalah
     
     a.  
-        ```
-        const stop = watch(search(), {
-            console.log('fungsi watch berjalan')
-        })
+    ```
+    const stop = watch(search(), {
+        console.log('fungsi watch berjalan')
+    })
 
-        const handleClick = () => {
-            stop();
-        }
-        ```
+    const handleClick = () => {
+        stop();
+    }
+    ```
     
     **b. 
-        ```
-        const stop = watch(search, () {
-            console.log('fungsi watch berjalan')
-        })
+    ```
+    const stop = watch(search, () {
+        console.log('fungsi watch berjalan')
+    })
 
-        const handleClick = () => {
-            stop();
-        }
-        ```
+    const handleClick = () => {
+        stop();
+    }
+    ```
     **
 
     c. 
-        ```
-        const stop = watch(search(), {
-            console.log('fungsi watch berjalan')
-        })
+    ```
+    const stop = watch(search(), {
+        console.log('fungsi watch berjalan')
+    })
 
-        const handleClick => ({
-            stop();
-        })
-        ```
+    const handleClick => ({
+        stop();
+    })
+    ```
 
     d. 
-        ```
-        const stop = watch(search, () {
-            console.log('fungsi watch berjalan')
-        })
+    ```
+    const stop = watch(search, () {
+        console.log('fungsi watch berjalan')
+    })
 
-        const handleClick => ({
-            stop();
-        })
-        ```
+    const handleClick => ({
+        stop();
+    })
+    ```
 
 ## Menggunakan Props Di Composition API
 
@@ -450,3 +451,150 @@
     d. onUpdated
 
 ## Membuat Fake REST API dan Mencoba Async Await
+
+37. Apa itu json-server?
+    
+    a. Library yang digunakan untuk membuat rest api
+
+    **b. Library yang digunakan untuk membuat fake rest api**
+
+    c. Library yang digunakan untuk membuat server
+
+    d. Library yang digunakan untuk membuat data json
+
+38. Cara menginstall json-server adalah...
+
+    a. npm install -i json-server
+
+    b. npm install -d json-server
+
+    **c. npm install -g json-server**
+
+    d. npm install -f json-server
+
+39. Cara menjalankan file db.json menggunakan json-server adalah...
+
+    a. json-server -serve data/db.json
+
+    b. json-server --serve data/db.json
+
+    c. json-server -watch data/db.json
+
+    **d. json-server --watch data/db.json**
+
+40. Apa kegunaan async await?
+
+    a. untuk menjalankan proses selanjutnya berjalan sebelum proses yang lainnya selesai
+
+    b. untuk menjalankan proses selanjutnya tanpa menunggu proses yang lainnya selesai
+
+    **c. untuk mencegah proses selanjutnya berjalan sebelum proses yang lainnya selesai**
+
+    d. a dan b benar
+
+41. Source code untuk get data posts dari json-server dan adalah
+    
+    a.
+    ```
+    const load = async() => {
+        try{
+            let data = fetch('http//localhost:3000/posts')
+            if(! data.ok ) {
+                throw Error('Tidak ada data')
+            }
+            posts.value = data.json()
+        }catch(err){
+            error.value = err.message
+        }
+    }
+    ```
+    
+    b. 
+    ```
+    const load = async() => {
+        try{
+            let data = await fetch('http//localhost:3000/posts')
+            if(! data.ok ) {
+                throw Error('Tidak ada data')
+            }
+            posts.value = data.json()
+        }catch(err){
+            error.value = err.message
+        }
+    }
+    ```
+    
+    c. 
+    ```
+    const load = async() => {
+        try{
+            let data = fetch('http//localhost:3000/posts')
+            if(! data.ok ) {
+                throw Error('Tidak ada data')
+            }
+            posts.value = await data.json()
+        }catch(err){
+            error.value = err.message
+        }
+    }
+    ```
+
+    **d. 
+    ```
+    const load = async() => {
+        try{
+            let data = await fetch('http//localhost:3000/posts')
+            if(! data.ok ) {
+                throw Error('Tidak ada data')
+            }
+            posts.value = await data.json()
+        }catch(err){
+            error.value = err.message
+        }
+    }
+    ```
+    **
+
+## Membuat dan Memanggil Fungsi di Luar Component
+
+42. Isi fungsi-fungsi yang dapat di panggil di component manapun biasa nya disebut
+    
+    a. composer
+
+    b. composible
+
+    **c. composable**
+
+    d. composition
+
+43. Agar data posts, error dan fungsi load dapat di panggil di fungsi getPosts maka kita perlu menuliskan source code...
+
+    a. [ posts, error, load ]
+
+    b. return post, error, load
+    
+    c. return [ post, error, load ]
+    
+    **d. return { post, error, load }**
+
+44. Agar fungsi getPosts dapat dipanggil di componen lain kita perlu menuliskan source code
+    
+    a. import getPosts
+
+    b. export getPosts
+
+    **c. export default getPosts**
+
+    d. export module getPosts
+
+45. Cara memanggil posts, error dan load di dalam component adalah
+    
+    **a. const { posts, error, load } = getPosts()**
+    
+    b. const [ posts, error, load ] = getPosts()
+
+    c. const { posts, error, load } = getPosts
+
+    d. const [ posts, error, load ] = getPosts
+
+## Membuat Fungsi untuk Memanggil Single Data Post
