@@ -256,7 +256,7 @@
 
     **c. 
     ```
-        const resultSearch = computed(() => {
+    const resultSearch = computed(() => {
         return names.value
     })
     ```
@@ -598,3 +598,164 @@
     d. const [ posts, error, load ] = getPosts
 
 ## Membuat Fungsi untuk Memanggil Single Data Post
+
+46. Cara menambahkan url parameter id pada posts untuk melihat detail adalah
+    
+    a. path: '/posts/id'
+    
+    b. path: '/posts/'+id
+
+    **c. path: '/posts/:id'**
+
+    d. path: '/posts/{id}'
+
+47. Cara mengaktifkan props didalam url adalah....
+    
+    **a. props: true**
+    
+    b. props: false
+    
+    c. props: on
+    
+    d. A dan C benar
+
+48. Cara memanggil satu data posts adalah
+    
+    a. let data = await fetch('localhost:3000/post/id')
+
+    b. let data = await fetch('localhost:3000/posts/id')
+    
+    c. let data = await fetch('localhost:3000/posts' + id)
+
+    **d. let data = await fetch('localhost:3000/posts/' + id)**
+
+49. Perbedaan pemanggilan fungsi composable getPosts dan getPost adalah
+
+    **a. 
+    ```
+       getPosts: const { posts, error, load } = getPosts(), 
+       getPost: const { post, error, load } = getPost(props.id)
+    ```
+    **
+    b. 
+    ```
+       getPosts: const { posts, error, load } = getPosts(), 
+       getPost: const { post, error, load } = getPost(props.value.id)
+    ```
+
+    c. 
+    ```
+       getPosts: const { posts, error, load } = getPosts(props.id), 
+       getPost: const { post, error, load } = getPost()
+    ```
+
+    d. 
+    ```
+       getPosts: const { posts, error, load } = getPosts(props.value.id), 
+       getPost: const { post, error, load } = getPost()
+    ```
+    
+## Mempelajari Promise Async Await untuk Menampilkan Loading
+
+50. Berikut ini property css yang dapat membuat setengah lingkaran adalah
+    
+    a. margin: 30px auto;
+    
+    b. border: 3px solid transparent;
+
+    **c. border-radius: 50%**
+    
+    d. width: 40px;
+
+51. Cara membuat fungsi animasi di css adalah...
+
+    a. 
+    ```
+    function spin(){
+        to {}
+    }
+    ```
+    
+    b. 
+    ```
+    @keyFrames spin {
+        to{}
+    }
+    ```
+    
+    **c. 
+    ```
+    @keyframes spin {
+        to{}
+    }
+    ```
+    **
+
+    d. 
+    ```
+    @keyframes spin() {
+        to{}
+    }
+    ```
+
+52. Ada dua macam parameter dalam promise yaitu...
+
+    a. solve dan eject
+
+    b. solve dan reject
+
+    c. resolve dan eject
+
+    **d. resolve dan reject**
+
+53. Cara menambahkan jeda selama 2 detik adalah
+
+    a. setInterval(resolve, 2000)
+
+    **b. setTimeout(resolve, 2000)**
+
+    c. setInterval(resolve, 2)
+
+    d. setTimeout(resolve, 2)
+
+## Membuat Halaman Create Post dan Input Tags
+
+54. Source code untuk melakukan event saat klik enter mencegah submit terjadi yaitu...
+
+    a. @key.enter.prevent = "handleKeydown"
+
+    **b. @keydown.enter.prevent = "handleKeydown"**
+
+    c. @key.enter.event = "handleKeydown"
+
+    d. @keydown.enter.event = "handleKeydown"
+
+55. Source code untuk memasukkan beberapa data tag ke dalam tags adalah
+
+    a. tags.push(tag)
+
+    b. tags.pop(tag)
+
+    **c. tags.value.push(tag.value)**
+
+    d. tags.value.pop(tag.value)
+
+56. Untuk menghapus nilai whitespace kita dapat menggunakan fungsi?
+    
+    a. push
+
+    b. pop
+
+    c. includes
+
+    **d. replace**
+
+57. Data apa saja yang perlu di inputkan dengan menggunakan directive v-model pada component Create.vue?
+    
+    a. title, body, tags, tag
+
+    b. title, body, tags
+
+    **c. title, body, tag**
+
+    d. title, body
