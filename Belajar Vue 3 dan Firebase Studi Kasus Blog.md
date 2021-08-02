@@ -310,7 +310,7 @@
     
     **d. watch  berjalan saat data terjadi perubahan sedangkan watchEffect berjalan secara otomatis saat componen pertama kali di muat**
 
-29. cara memberhentikan watch adalah
+28. cara memberhentikan watch adalah
     
     a.  
     ```
@@ -319,7 +319,7 @@
     })
 
     const handleClick = () => {
-        stop();
+        stop()
     }
     ```
     
@@ -330,7 +330,7 @@
     })
 
     const handleClick = () => {
-        stop();
+        stop()
     }
     ```
     **
@@ -342,7 +342,7 @@
     })
 
     const handleClick => ({
-        stop();
+        stop()
     })
     ```
 
@@ -353,13 +353,13 @@
     })
 
     const handleClick => ({
-        stop();
+        stop()
     })
     ```
 
 ## Menggunakan Props Di Composition API
 
-30. Cara menangkap data props adalah
+29. Cara menangkap data props adalah
     
     **a. ``props: ['posts']``**
     
@@ -369,7 +369,7 @@
     
     d. ``props = 'posts'``
 
-31. Cara memanggil data props posts di dalam setup function adalah
+30. Cara memanggil data props posts di dalam setup function adalah
     a. 
     ```
     setup() {
@@ -398,7 +398,7 @@
     ```
     **
 
-32. Untuk memanipulasi data props perlu menggunakan fungsi
+31. Untuk memanipulasi data props perlu menggunakan fungsi
 
     a. methods
 
@@ -408,7 +408,7 @@
 
     d. mounted
 
-33. untuk memotong string karakter kita dapat menggunakan fungsi
+32. untuk memotong string karakter kita dapat menggunakan fungsi
 
     a. methods
 
@@ -420,7 +420,7 @@
 
 ## Implementasi Lifecycle Hooks Vue 3
 
-34. onMounted berjalan saat...
+33. onMounted berjalan saat...
 
     **a. component tersebut dimuat atau dijalankan**
 
@@ -430,7 +430,7 @@
 
     d. b dan c benar
 
-35. onUpdated berjalan saat..
+34. onUpdated berjalan saat..
 
     a. component terjadi penambahan data
 
@@ -440,7 +440,7 @@
 
     **d. a, b dan c benar**
 
-36. Berikut yang bukan merupakan lifecycle hooks di dalam vue adalah 
+35. Berikut yang bukan merupakan lifecycle hooks di dalam vue adalah 
     
     a. onMonted
 
@@ -452,7 +452,7 @@
 
 ## Membuat Fake REST API dan Mencoba Async Await
 
-37. Apa itu json-server?
+36. Apa itu json-server?
     
     a. Library yang digunakan untuk membuat rest api
 
@@ -462,7 +462,7 @@
 
     d. Library yang digunakan untuk membuat data json
 
-38. Cara menginstall json-server adalah...
+37. Cara menginstall json-server adalah...
 
     a. npm install -i json-server
 
@@ -472,7 +472,7 @@
 
     d. npm install -f json-server
 
-39. Cara menjalankan file db.json menggunakan json-server adalah...
+38. Cara menjalankan file db.json menggunakan json-server adalah...
 
     a. json-server -serve data/db.json
 
@@ -482,7 +482,7 @@
 
     **d. json-server --watch data/db.json**
 
-40. Apa kegunaan async await?
+39. Apa kegunaan async await?
 
     a. untuk menjalankan proses selanjutnya berjalan sebelum proses yang lainnya selesai
 
@@ -492,7 +492,7 @@
 
     d. a dan b benar
 
-41. Source code untuk get data posts dari json-server dan adalah
+40. Source code untuk get data posts dari json-server dan adalah
     
     a.
     ```
@@ -557,7 +557,7 @@
 
 ## Membuat dan Memanggil Fungsi di Luar Component
 
-42. Isi fungsi-fungsi yang dapat di panggil di component manapun biasa nya disebut
+41. Isi fungsi-fungsi yang dapat di panggil di component manapun biasa nya disebut
     
     a. composer
 
@@ -567,7 +567,7 @@
 
     d. composition
 
-43. Agar data posts, error dan fungsi load dapat di panggil di fungsi getPosts maka kita perlu menuliskan source code...
+42. Agar data posts, error dan fungsi load dapat di panggil di fungsi getPosts maka kita perlu menuliskan source code...
 
     a. [ posts, error, load ]
 
@@ -577,7 +577,7 @@
     
     **d. return { post, error, load }**
 
-44. Agar fungsi getPosts dapat dipanggil di componen lain kita perlu menuliskan source code
+43. Agar fungsi getPosts dapat dipanggil di componen lain kita perlu menuliskan source code
     
     a. import getPosts
 
@@ -587,7 +587,7 @@
 
     d. export module getPosts
 
-45. Cara memanggil posts, error dan load di dalam component adalah
+44. Cara memanggil posts, error dan load di dalam component adalah
     
     **a. const { posts, error, load } = getPosts()**
     
@@ -599,7 +599,7 @@
 
 ## Membuat Fungsi untuk Memanggil Single Data Post
 
-46. Cara menambahkan url parameter id pada posts untuk melihat detail adalah
+45. Cara menambahkan url parameter id pada posts untuk melihat detail adalah
     
     a. path: '/posts/id'
     
@@ -609,7 +609,7 @@
 
     d. path: '/posts/{id}'
 
-47. Cara mengaktifkan props didalam url adalah....
+46. Cara mengaktifkan props didalam url adalah....
     
     **a. props: true**
     
@@ -619,7 +619,7 @@
     
     d. A dan C benar
 
-48. Cara memanggil satu data posts adalah
+47. Cara memanggil satu data posts adalah
     
     a. let data = await fetch('localhost:3000/post/id')
 
@@ -629,7 +629,7 @@
 
     **d. let data = await fetch('localhost:3000/posts/' + id)**
 
-49. Perbedaan pemanggilan fungsi composable getPosts dan getPost adalah
+48. Perbedaan pemanggilan fungsi composable getPosts dan getPost adalah
 
     **a. 
     ```
@@ -657,7 +657,7 @@
     
 ## Mempelajari Promise Async Await untuk Menampilkan Loading
 
-50. Berikut ini property css yang dapat membuat setengah lingkaran adalah
+49. Berikut ini property css yang dapat membuat setengah lingkaran adalah
     
     a. margin: 30px auto;
     
@@ -667,7 +667,7 @@
     
     d. width: 40px;
 
-51. Cara membuat fungsi animasi di css adalah...
+50. Cara membuat fungsi animasi di css adalah...
 
     a. 
     ```
@@ -698,7 +698,7 @@
     }
     ```
 
-52. Ada dua macam parameter dalam promise yaitu...
+51. Ada dua macam parameter dalam promise yaitu...
 
     a. solve dan eject
 
@@ -708,7 +708,7 @@
 
     **d. resolve dan reject**
 
-53. Cara menambahkan jeda selama 2 detik adalah
+52. Cara menambahkan jeda selama 2 detik adalah
 
     a. setInterval(resolve, 2000)
 
@@ -720,7 +720,7 @@
 
 ## Membuat Halaman Create Post dan Input Tags
 
-54. Source code untuk melakukan event saat klik enter mencegah submit terjadi yaitu...
+53. Source code untuk melakukan event saat klik enter mencegah submit terjadi yaitu...
 
     a. @key.enter.prevent = "handleKeydown"
 
@@ -730,7 +730,7 @@
 
     d. @keydown.enter.event = "handleKeydown"
 
-55. Source code untuk memasukkan beberapa data tag ke dalam tags adalah
+54. Source code untuk memasukkan beberapa data tag ke dalam tags adalah
 
     a. tags.push(tag)
 
@@ -740,7 +740,7 @@
 
     d. tags.value.pop(tag.value)
 
-56. Untuk menghapus nilai whitespace kita dapat menggunakan fungsi?
+55. Untuk menghapus nilai whitespace kita dapat menggunakan fungsi?
     
     a. push
 
@@ -750,7 +750,7 @@
 
     **d. replace**
 
-57. Data apa saja yang perlu di inputkan dengan menggunakan directive v-model pada component Create.vue?
+56. Data apa saja yang perlu di inputkan dengan menggunakan directive v-model pada component Create.vue?
     
     a. title, body, tags, tag
 
@@ -759,3 +759,477 @@
     **c. title, body, tag**
 
     d. title, body
+
+## Membuat Fungsi Create Post untuk Menambah Data Baru
+
+57. Source code untuk menambahkan data posts dengan json-server adalah
+
+    a.
+    ```
+    const handleSubmit = () => {
+        const post = {
+            title: title.value 
+            body: body.value
+            tags: tags.value
+        }
+
+        fetch('http://localhost:3000/posts/')
+    }
+    ```
+
+    b.
+    ```
+    const handleSubmit = async () => {
+        const post = {
+            title: title.value 
+            body: body.value
+            tags: tags.value
+        }
+
+        await fetch('http://localhost:3000/posts/')   
+    }
+    ```
+
+    c.
+    ```
+    const handleSubmit = () => {
+        const post = {
+            title: title.value 
+            body: body.value
+            tags: tags.value
+        }
+
+        fetch('http://localhost:3000/posts/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(post)
+        })   
+    }
+    ```
+    
+    **d.
+    ```
+    const handleSubmit = async () => {
+        const post = {
+            title: title.value 
+            body: body.value
+            tags: tags.value
+        }
+
+        await fetch('http://localhost:3000/posts/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(post)
+        })   
+    }
+    ```
+    **
+
+58. Salah satu perbedaan fetch get dan post adalah
+
+    a. kalau get perlu menambahkan method sedangkan post tidak perlu menambahkan method
+
+    b. kalau get tidak perlu menambahkan method sedangkan post perlu menambahkan method
+
+    c. kalau get perlu menambahkan options sedangkan post tidak perlu menambahkan options
+
+    **d. kalau get tidak perlu menambahkan options sedangkan post perlu menambahkan options**
+ 
+59. Options apa saja yang perlu ditambahkan untuk menambahkan data posts?
+    
+    **a. methods, headers, body**
+
+    b. methods, headers, title, body
+
+    c. methods, headers, content, body
+
+    d. methods, headers, type, body
+
+
+60. Json.stringify(post) berfungsi untuk....
+    
+    a. menambahkan nilai key dan value dari objek post ke dalam json
+
+    **b. mengubah nilai key dan value dari objek post ke dalam json**
+
+    c. menambahkan nilai key dan value dari json ke dalam objek post
+
+    d. mengubah nilai key dan value dari json ke dalam objek post
+
+
+61. Source code untuk redirect halaman Home dengan router adalah
+
+    a. router.push(name: 'Home')
+
+    b. router.push(name: '/home')
+
+    **c. router.push({name: 'Home'})**
+
+    d. router.push({name: '/home'})
+
+## Menginstall Library Pihak Ketiga Untuk Template Blog
+
+62. Salah satu situs yang menyediakan template bootstrap gratis adalah
+
+    a. starbootstrap.com
+
+    **b. startbootstrap.com**
+
+    c. bulmathemes.com
+
+    d. tailwindtoolbox.com
+
+63. Library yang dibutuhkan untuk menginstall bootstrap adalah
+    
+    a. jQuery dan ajax
+
+    **b. jQuery dan popper.js**
+
+    c. popper.js dan ajax
+
+    d. font-awesome dan jQuery
+
+64. Apa saja yang perlu di import untuk mengintegrasikan vue dengan bootstrap
+    
+    **a.
+    ```    
+    import 'bootstrap'
+    import 'bootstrap/dist/boostrap.css'
+
+    import jQuery from 'jquery'
+    window.$ = jQuery
+    ```
+    
+    **
+    b.
+    ```    
+    import 'bootstrap'
+    import 'bootstrap/dist/boostrap.js'
+
+    import jQuery from 'jquery'
+    window.$ = jQuery
+    ```
+
+    c. 
+    ```    
+    import 'bootstrap'
+    import 'bootstrap/dist/boostrap.css'
+
+    import jquery
+    window.$ = jQuery
+    ```
+
+    d. 
+    ```    
+    import 'bootstrap'
+    import 'bootstrap/dist/boostrap.js'
+
+    import jQuery from 'jquery'
+    window.$ = jquery
+    ```
+
+65. Apa maksud dari window.$ = jQuery ?
+
+    a. memanggil objek jQuery sebagai window.$
+
+    b. mendefinisikan window yang berisi jQuery
+
+    **c. mendefinisikan window sebagai objek global dan $ untuk menampung jQuery**
+
+    d. mendefinisikan $ sebagai objek global dan window untuk menampung jQuery
+
+## Integrasi Vue dengan Template Bootstrap
+
+66. Didalam vue untuk menyimpan file css dan javascript disimpan didalam direktori...
+
+    a. public
+
+    **b. src/assets**
+
+    c. src/public
+
+    d. src/public/assets
+
+67. Didalam vue untuk menyimpan file image disimpan didalam direktori...
+
+    **a. public**
+
+    b. src/assets
+
+    c. src/public
+
+    d. src/public/assets
+
+68. Cara menregistrasikan clean-blog.css dan clean-blog.js di dalam vue adalah
+
+    a. 
+    ```
+    import /assets/css/clean-blog.css
+    import /assets/js/clean-blog.js
+    ```
+
+    b. 
+    ```
+    import ./assets/css/clean-blog.css
+    import ./assets/js/clean-blog.js
+    ```
+
+    c. 
+    ```
+    import ../assets/css/clean-blog.css
+    import ../assets/js/clean-blog.js
+    ```
+
+    **d. 
+    ```
+    import @/assets/css/clean-blog.css
+    import @/assets/js/clean-blog.js
+    ```
+    **
+
+
+69. fa-2x artinya adalah
+
+    a. font-awesome icon berbentuk lingkaran
+
+    b. font-awesome icon berukuran lebih besar (33%)
+
+    **c. font-awesome icon memperbesar ukuran 2x** 
+
+    d. font-awesome icon memperkecil ukuran 2x
+
+
+## Desain Halaman ShowPost
+
+70. Dimana post title di letakan?
+    
+    **a. 
+    ```
+    <div class="post-heading"> 
+        <h1> {{post.title}} </h1> 
+    </div>
+    ```
+    **
+
+    b. 
+    ```
+    <div class="subheading"> 
+        <h1> {{post.title}} </h1> 
+    </div>
+    ```
+
+    c.
+    ```
+    <span class="meta"> 
+        <h1> {{post.title}} </h1> 
+    </div>
+    ```
+
+    d. 
+    ```
+    <span class="meta-post"> 
+        <h1> {{post.title}} </h1> 
+    </div>
+    ```
+
+71. Bagaimana mengubah tag anchor ``<a class="nav-link" href="index.html">Home</a>`` menjadi router-link untuk meredirect ke halaman Home.vue?
+
+    a. ``<router-link class="nav-link" href="Home.vue">Home</router-linke>``
+
+    b. ``<router-link class="nav-link" to="Home.vue">Home</router-linke>``
+
+    **c. ``<router-link class="nav-link" :to="{name: 'Home'}">Home</router-linke>``**
+
+    d. ``<router-link class="nav-link" :to="{name: '/home'}">Home</router-linke>``
+
+72. Agar saat post nya tidak ada tidak muncul halaman post nya tetapi halaman loading terlebih dahulu maka penutup ``</div>`` v-if="post" dan 
+    ``<div else> <Loading /> </div>`` diletakan...
+
+    a. sebelum tag horizontal line ``( <hr /> )``
+
+    **b. setelah tag horizontal line ``( <hr /> )``**
+
+    c. setelah tutup tag article ``( </article> )``
+
+    d. setelah tutup tag header ``( </header> )``
+
+73. Agar data tags dapat sejajar atau inline maka perlu menambahkan class...
+
+    a. post-heading
+
+    b. meta-heading
+
+    **c. meta-post**
+
+    d. meta
+
+## Mempercantik Halaman Create Post
+
+74.
+
+75.
+
+76.
+
+77.
+
+## Menampilkan Data Post Berdasarkan Tag
+
+78. Cara mengimport PostList pada direktory views/posts/Tag.vue adalah
+
+    a. import PostList from '../components/posts/PostList'
+
+    b. import PostList from '../../components/posts/PostList'
+
+    c. import PostList from '@/components/posts/PostList'
+
+    **d. B dan C benar**
+
+79. 
+    a. 
+    ```
+    const postsWithTag = (() => {
+        return posts.value.filter((p) => p.tags.includes(route.params.tag))
+    })
+    ```
+
+    **b. 
+    ```
+    const postsWithTag = computed(() => {
+        return posts.value.filter((p) => p.tags.includes(route.params.tag))
+    })
+    ```
+    **
+
+    c. 
+    ```
+    const postsWithTag = computed(() => {
+        return posts.filter((p) => p.tags.includes(route.params.tag))
+    })
+    ```
+
+    d. 
+    ```
+    const postsWithTag = computed(() => {
+        return posts.value.includes((p) => p.tags.filter(route.params.tag))
+    })
+    ```
+
+80. Agar kita bisa mengakses route.params maka kita perlu mengimport...
+    
+    a. import useRouter from 'vue-router'
+
+    b. import useRoute from 'vue-router'
+
+    c. import { useRoute } from 'vue'
+
+    **d. import { useRoute } from 'vue-router'**
+
+81. Source code agar kita klik salah satu tag kita dapat mencari posts yang memiliki tag tersebut adalah...
+
+    a. 
+    ```
+    <span v-for="tag in post.tag" :key="tag" class="post-meta">
+        <route-link :to="{name='Tag', params= {tag: tag}}">
+            #{{tag}}
+        </route-link>
+    </span>
+    ```
+
+    **b. 
+    ```
+    <span v-for="tag in post.tag" :key="tag" class="post-meta">
+        <router-link :to="{name='Tag', params= {tag: tag}}">
+            #{{tag}}
+        </router-link>
+    </span>
+    ```
+    **
+
+    c. 
+    ```
+    <span v-for="tag in post.tag" :key="tag" class="post-meta">
+        <route-link params= {tag: tag}">
+            #{{tag}}
+        </route-link>
+    </span>
+    ```
+
+    d. 
+    ```
+    <span v-for="tag in post.tag" :key="tag" class="post-meta">
+        <router-link :to="params= {tag: tag}">
+            #{{tag}}
+        </router-link>
+    </span>
+    ```
+
+## Membuat Project Layanan Firebase
+
+82.
+
+83.
+
+84.
+
+85.
+
+## Konfigurasi Sdk Firebase Di Vue Cli
+
+86.
+
+87.
+
+88.
+
+89.
+
+## Membuat Collection Di Firestore
+
+90.
+
+91.
+
+92.
+
+93.
+
+## Menampilkan Seluruh Data Collection Firestore Dalam Vue
+
+94.
+
+95.
+
+96.
+
+97.
+
+## Menampilkan Satu Data Collection Dalam Vue
+
+98.
+
+99.
+
+100.
+
+101.
+
+## Menambah Data Collection Dari Vue
+
+102.
+
+103.
+
+104.
+
+105.
+
+## Menghapus Collection Dari Vue
+
+106.
+
+107.
+
+108.
+
+109.
