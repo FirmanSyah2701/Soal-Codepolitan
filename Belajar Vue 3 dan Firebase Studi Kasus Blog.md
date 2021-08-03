@@ -887,7 +887,7 @@
 
     c. popper.js dan ajax
 
-    d. font-awesome dan jQuery
+    d. font-awesome dan popper.js
 
 64. Apa saja yang perlu di import untuk mengintegrasikan vue dengan bootstrap
     
@@ -1001,7 +1001,7 @@
 
 ## Desain Halaman ShowPost
 
-70. Dimana post title di letakan?
+70. Dimana post title diletakan?
     
     **a. 
     ```
@@ -1065,17 +1065,78 @@
 
 ## Mempercantik Halaman Create Post
 
-74.
+74. Source code untuk membuat inputan beberapa tags adalah
 
-75.
+    a. 
+    ```
+        <input
+            type="text"
+            class="form-control"
+            placeholder="input tags"
+            required
+            v-model="tags"
+            @keydown.enter.prevent="handleKeyDown"
+        >
+    ```
 
-76.
+    b. 
+    ```
+        <input
+            type="text"
+            class="form-control"
+            placeholder="input tags"
+            required
+            v-model="tag"
+            @keydown.enter.prevent="handleKeyDown"
+        >
+    ```
 
-77.
+    c. 
+    ```
+        <input
+            type="text"
+            class="form-control"
+            placeholder="input tags"
+            v-model="tags"
+            @keydown.enter.prevent="handleKeyDown"
+        >
+    ```
+
+    **d. 
+    ```
+        <input
+            type="text"
+            class="form-control"
+            placeholder="input tags"
+            v-model="tag"
+            @keydown.enter.prevent="handleKeyDown"
+        >
+    ```
+    **
+
+75. Pada template contact terdapat form dengan textarea message yang bisa kita manfaatkan untuk membuat...
+
+    a. title
+
+    **b. body**
+
+    c. tags
+
+    d. tag
+
+76. Agar data tag muncul saat kita tekan enter maka perlu menambahkan syntax...
+
+    **a. ``<span v-for="tag in tags" :key="tag"> #{{ tag }} </span>``**
+
+    b. ``<span v-for="tag in tags" :key="tag"> #{{ tags }} </span>``
+
+    c. ``<span v-for="tags in tag" :key="tag"> #{{ tag }} </span>``
+
+    d. ``<span v-for="tags in tag" :key="tag"> #{{ tags }} </span>``
 
 ## Menampilkan Data Post Berdasarkan Tag
 
-78. Cara mengimport PostList pada direktory views/posts/Tag.vue adalah
+77. Cara mengimport PostList pada direktory views/posts/Tag.vue adalah
 
     a. import PostList from '../components/posts/PostList'
 
@@ -1085,7 +1146,7 @@
 
     **d. B dan C benar**
 
-79. 
+78. 
     a. 
     ```
     const postsWithTag = (() => {
@@ -1115,7 +1176,7 @@
     })
     ```
 
-80. Agar kita bisa mengakses route.params maka kita perlu mengimport...
+79. Agar kita bisa mengakses route.params maka kita perlu mengimport...
     
     a. import useRouter from 'vue-router'
 
@@ -1125,7 +1186,7 @@
 
     **d. import { useRoute } from 'vue-router'**
 
-81. Source code agar kita klik salah satu tag kita dapat mencari posts yang memiliki tag tersebut adalah...
+80. Source code agar kita klik salah satu tag kita dapat mencari posts yang memiliki tag tersebut adalah...
 
     a. 
     ```
@@ -1166,15 +1227,17 @@
 
 ## Membuat Project Layanan Firebase
 
+81.
+
 82.
 
 83.
 
 84.
 
-85.
-
 ## Konfigurasi Sdk Firebase Di Vue Cli
+
+85.
 
 86.
 
@@ -1182,9 +1245,9 @@
 
 88.
 
-89.
-
 ## Membuat Collection Di Firestore
+
+89.
 
 90.
 
@@ -1192,9 +1255,9 @@
 
 92.
 
-93.
-
 ## Menampilkan Seluruh Data Collection Firestore Dalam Vue
+
+93.
 
 94.
 
@@ -1202,9 +1265,9 @@
 
 96.
 
-97.
-
 ## Menampilkan Satu Data Collection Dalam Vue
+
+97.
 
 98.
 
@@ -1212,9 +1275,9 @@
 
 100.
 
-101.
-
 ## Menambah Data Collection Dari Vue
+
+101.
 
 102.
 
@@ -1222,14 +1285,12 @@
 
 104.
 
-105.
-
 ## Menghapus Collection Dari Vue
+
+105.
 
 106.
 
 107.
 
 108.
-
-109.
