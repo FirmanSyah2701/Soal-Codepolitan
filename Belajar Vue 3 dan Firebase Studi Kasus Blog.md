@@ -1,5 +1,7 @@
 # Belajar Vue 3 dan Firebase Studi Kasus Blog
 
+# Memahami Composition API
+
 ## Gambaran Composition API
 
 1. Berikut ini yang merupakan struktur Options API adalah...
@@ -310,7 +312,7 @@
     
     **d. watch  berjalan saat data terjadi perubahan sedangkan watchEffect berjalan secara otomatis saat componen pertama kali di muat**
 
-28. cara memberhentikan watch adalah
+28. Cara memberhentikan watch adalah
     
     a.  
     ```
@@ -449,6 +451,8 @@
     **c. onChange**
 
     d. onUpdated
+
+# Fetch Data REST API dengan Asynchronous
 
 ## Membuat Fake REST API dan Mencoba Async Await
 
@@ -867,6 +871,8 @@
 
     d. router.push({name: '/home'})
 
+# Integrasi Template Bootstrap di Vue CLI
+
 ## Menginstall Library Pihak Ketiga Untuk Template Blog
 
 62. Salah satu situs yang menyediakan template bootstrap gratis adalah
@@ -1224,73 +1230,366 @@
         </router-link>
     </span>
     ```
+# Menggunakan Database Firebase
 
 ## Membuat Project Layanan Firebase
 
-81.
+81. Berikut ini yang merupakan layanan firebase 
+    
+    a. Realtime database
 
-82.
+    b. Authentication
 
-83.
+    c. Analytics
 
-84.
+    **d. Semua benar**
+
+82. Berikut ini yang merupakan mode untuk membuat database di firestore adalah 
+
+    a. production mode dan development mode
+
+    b. development mode dan stagging mode
+
+    c. development mode dan test mode
+
+    **d. production mode dan test mode**
+
+83. Apa itu collection dan document?
+
+    a. collection adalah rows dan document adalah tabel
+
+    **b. collection adalah tabel dan document adalah rows**
+
+    c. collection adalah database dan document adalah tabel
+
+    d. collection adalah tabel dan document adalah database
+
+84. Berikut ini adalah pengertian dari firebase yang benar adalah....
+    
+    **a. Backend service yang menyediakan berbagai layanan kebutuhan tanpa melakukan coding backend secara manual**
+
+    b. Frontend service yang menyediakan berbagai layanan kebutuhan tanpa melakukan coding frontend secara manual
+
+    c. Backend service yang menyediakan berbagai layanan kebutuhan
+
+    d. Frontend service yang menyediakan berbagai layanan kebutuhan
+
 
 ## Konfigurasi Sdk Firebase Di Vue Cli
 
-85.
+85. Apa saja yang perlu di import untuk mengkonfigurasi firebase sdk?
 
-86.
+    a. 
+    ```
+    import firebase from firebase
+    import 'firebase/firestore'
+    ```
 
-87.
+    b.
+    ```
+    import firebase from firebase/app
+    import 'firebase/app/firestore'
+    ```
+    
+    **c.
+    ```
+    import firebase from firebase/app
+    import 'firebase/firestore'
+    ```
+    **
 
-88.
+    d.
+    ```
+    import firebase from firebase
+    import 'firebase/app/firestore'
+    ```
+
+86. Source code untuk firestore dapat di import di semua file javascript
+
+    **a. export { projectFirestore }**
+
+    b. export = { projectFirestore }
+
+    c. export.default { projectFirestore }
+
+    d. export.module = { projectFirestore }
+
+87. Cara install library firebase adalah
+
+    a. npm install firebase-firestore
+
+    **b. npm install firebase**
+
+    c. npm install firestore
+
+    d. npm install firebase/app
+
+88. Untuk mendapakan firebase SDK kita perlu...
+
+    a. Menginstall library terlebih dahulu
+
+    b. Membuat collections terlebih dahulu
+
+    **c. Menregistrasikan app terlebih dahulu**
+
+    d. Mengupload project terlebih dahulu
 
 ## Membuat Collection Di Firestore
 
-89.
+89. Cara menambah table atau data baru di firestore adalah
+    
+    **a. klik menu firestore, start collection, isi collection id, kemudian isi document id dan field nya**
 
-90.
+    b. klik menu firestore, start collection, isi document id kemuian isi collectio id dan field nya
 
-91.
+    c. klik menu realtime database, start collection, isi collection id, kemudian isi document id dan field nya
 
-92.
+    d. klik menu realtime database, start collection, isi document id kemuian isi collectio id dan field nya
+
+90. Cara mengisi docoment id ialah
+
+    a. tidak usah di isi kosongkan saja
+
+    b. klik AUTO-ID
+
+    c. isi dengan acak/random
+
+    **d. b dan c benar**
+
+91. Type dalam field yang menampung banyak data pada firestore adalah 
+    
+    a. string
+
+    b. integer
+
+    **c. array**
+
+    d. enum
+
+92. Yang termasuk type dalam field pada firestore adalah
+    
+    a. string
+
+    b. integer
+
+    c. array
+
+    **d. a dan c benar**
 
 ## Menampilkan Seluruh Data Collection Firestore Dalam Vue
 
-93.
+93. Source code untuk mendapatkan seluruh data pada collection post adalah
+    
+    a. 
+    ```
+    const res = await projectFirestore.collection('posts').get() 
+    posts = res.docs.map(doc => {
+        return {
+            ...doc.data(),
+            id: doc.id
+        }
+    })
+    ```
 
-94.
+    **b.
+    ```
+    const res = await projectFirestore.collection('posts').get() 
+    posts.value = res.docs.map(doc => {
+        return {
+            ...doc.data(),
+            id: doc.id
+        }
+    })
+    ```
+    **
 
-95.
+    c.
+    ```
+    const res = projectFirestore.collection('posts').get() 
+    posts = res.docs.map(doc => {
+        return {
+            ...doc.data(),
+            id: doc.id
+        }
+    })
+    ```
 
-96.
+    d.
+    ```
+    const res = projectFirestore.collection('posts').get() 
+    posts.value = res.docs.map(doc => {
+        return {
+            ...doc.data(),
+            id: doc.id
+        }
+    })
+    ```
+
+94. Apa kegunaan dari map? 
+    
+    a. mengambil seluruh data pada suatu objek
+
+    **b. mengubah format struktur suatu objek yang kita dapatkan**
+
+    c. menambahkan data pada suatu objek
+
+    d.
+
+95. Spread operator(...) adalah
+    
+    a. 
+
+    b. 
+
+    **c. menggabungkan suatu data/object array dengan satu key dan value lainnya**
+    
+    d.
+
+96. Untuk mendapatkan seluruh data posts pada firebase mengapa perlu di mapping?
+
+    **a.* Karena document id terpisah dengan field**
+
+    b.
+
+    c.
+
+    d.
 
 ## Menampilkan Satu Data Collection Dalam Vue
 
-97.
+97. Source code untuk mengambil satu data pada collection post adalah...
+    
+    a. ``const res = await projectFirestore.collection('posts').id(id).get()``
 
-98.
+    b. ``const res = await projectFirestore.collection('posts').id(id.value).get()``
 
-99.
+    **c. ``const res = await projectFirestore.collection('posts').doc(id).get()``**
 
-100.
+    d. ``const res = await projectFirestore.collection('posts').doc(id.value).get()``
+
+98. Cara untuk menambahkan validasi agar saat kita mengakses url dengan id posts yang tersedia akan menampilkan pesan data not available adalah..
+    
+    a. 
+    ```
+    if(res.exists) {
+        throw Error('data not available')
+    }
+    ```
+
+    b.
+    ```
+    if(res.exist) {
+        throw Error('data not available')
+    }
+    ```
+
+    **c. 
+    ```
+    if(! res.exists) {
+        throw Error('data not available')
+    }
+    ```
+    **
+
+    d.
+    ```
+    if( != res.exists) {
+        throw Error('data not available')
+    }
+    ```
+
+99. Cara mengimport firebase config adalah
+    
+    **a. import { projectFirestore } from '@/firebase/config'**
+    
+    b. import projectFirestore from '@/firebase/config'
+
+    c. import { projectFirestore } from 'firebase/config'
+
+    d. projectFirestore from 'firebase/config'
 
 ## Menambah Data Collection Dari Vue
 
-101.
+100. Source code untuk requst menambahkan data posts baru 
+    
+    a. ``const res = await projectFirestore.collection('posts').post(post)``
 
-102.
+    **b. ``const res = await projectFirestore.collection('posts').add(post)``**
 
-103.
+    c. ``const res = projectFirestore.collection('posts').post(post)``
 
-104.
+    d. ``const res = projectFirestore.collection('posts').add(post)``
+
+101. Apakah perlu merequest atau mengisi id saat melakukan post/tambah data baru di collection
+
+    a. perlu karena id tidak boleh kosong
+
+    b. perlu karena id bersifat primary key
+
+    c. tidak perlu karena bebas bisa diisi atau tidak diisi
+
+    **d. tidak perlu karena dalam firestore id secara otomatis akan generate random**
+
+102. Cara untuk melihat data yang baru masuk di firebase adalah
+
+    **a. kehalaman firestore, klik collection lalu klik document**
+
+    b. kehalaman firestore, klik document lalu klik collection
+
+    c. kehalaman project overview, klik collection lalu klik document
+
+    d. kehalaman project overview, klik document lalu klik collection 
+
 
 ## Menghapus Collection Dari Vue
 
-105.
+103. Source code membuat button untuk memanggil fungsi delete yaitu handleDelete pada component show yaitu... 
+     
+     **a. ``<button style="padding:2px" class="btn btn-danger" @click="handleDelete"> Delete </button>``**
 
-106.
+     b. ``<button style="padding:2px" class="btn btn-danger" @onclick="handleDelete"> Delete </button>``
 
-107.
+     c. ``<button style="padding:2px" class="btn btn-danger" @submit="handleDelete"> Delete </button>``
+     
+     d. ``<button style="padding:2px" class="btn btn-danger" id="handleDelete"> Delete </button>``
 
-108.
+104. Cara membuat fungsi untuk menghapus data collection firebase 
+
+    a. 
+    ```
+    const handleDelete = async () => {
+        await projectFirestore.collection('posts').id(props.id).delete()
+    }
+    ```
+
+    b. 
+    ```
+    const handleDelete = async () => {
+        await projectFirestore.collection('posts').id(props.value.id).delete()
+    }
+    ```
+
+    **c. 
+    ```
+    const handleDelete = async () => {
+        await projectFirestore.collection('posts').doc(props.id).delete()
+    }
+    ```
+    **
+
+    d. 
+    ```
+    const handleDelete = async () => {
+        await projectFirestore.collection('posts').docs(props.value.id).delete()
+    }
+    ```
+
+105. Source code membuat objek route agar kita bisa meredirect ke halaman/component yang lain?
+
+    a. const route = useRouter()
+
+    **b. const route = useRoute()**
+
+    c. const route = router()
+
+    d. const route = route()
