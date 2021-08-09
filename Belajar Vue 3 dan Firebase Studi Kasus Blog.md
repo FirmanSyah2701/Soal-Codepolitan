@@ -1380,20 +1380,46 @@
 
 93. Source code untuk mendapatkan seluruh data pada collection post adalah
     
+    a. ``const res = await projectFirestore.collection('posts').get()``
+
+    **b. ``const res = await projectFirestore.collection('posts').get() ``**
+
+    c. ``const res = projectFirestore.collections('posts').get()``
+
+    d. ``const res = projectFirestore.collections('posts').get()``
+
+94. Apa kegunaan dari map? 
+    
+    a. mengambil seluruh data pada suatu objek
+
+    **b. mengubah format struktur suatu objek yang kita dapatkan**
+
+    c. mengubah format struktur dari collection firebase
+
+    d. menambahkan data pada suatu objek
+
+95. Spread operator(...) adalah
+    
+    a. mengubah suatu data/objek array
+
+    b. menghapus suatu data/objek array
+
+    **c. menggabungkan suatu data/object array dengan satu key dan value lainnya**
+    
+    d. memisahkan suatu data/object array dengan satu key dan value lainnya
+
+96. Source code untuk mapping data objek dari firebase beserta id nya adalah
+
     a. 
-    ```
-    const res = await projectFirestore.collection('posts').get() 
     posts = res.docs.map(doc => {
         return {
             ...doc.data(),
             id: doc.id
         }
     })
-    ```
 
-    **b.
+    **b. 
     ```
-    const res = await projectFirestore.collection('posts').get() 
     posts.value = res.docs.map(doc => {
         return {
             ...doc.data(),
@@ -1404,56 +1430,20 @@
     **
 
     c.
-    ```
-    const res = projectFirestore.collection('posts').get() 
     posts = res.docs.map(doc => {
         return {
             ...doc.data(),
-            id: doc.id
+            id: doc.data().id
         }
     })
-    ```
 
     d.
-    ```
-    const res = projectFirestore.collection('posts').get() 
     posts.value = res.docs.map(doc => {
         return {
             ...doc.data(),
-            id: doc.id
+            id: doc.data().id
         }
     })
-    ```
-
-94. Apa kegunaan dari map? 
-    
-    a. mengambil seluruh data pada suatu objek
-
-    **b. mengubah format struktur suatu objek yang kita dapatkan**
-
-    c. menambahkan data pada suatu objek
-
-    d.
-
-95. Spread operator(...) adalah
-    
-    a. 
-
-    b. 
-
-    **c. menggabungkan suatu data/object array dengan satu key dan value lainnya**
-    
-    d.
-
-96. Untuk mendapatkan seluruh data posts pada firebase mengapa perlu di mapping?
-
-    **a.* Karena document id terpisah dengan field**
-
-    b.
-
-    c.
-
-    d.
 
 ## Menampilkan Satu Data Collection Dalam Vue
 
