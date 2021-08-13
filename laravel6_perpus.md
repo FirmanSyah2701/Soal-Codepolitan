@@ -50,11 +50,11 @@
 
     **a. composer require barryvdh/laravel-debugbar --dev**
 
-    b. composer required barryvdh/laravel-debugbar
+    b. composer required barryvdh/laravel-debugbar --dev
 
-    c. composer install barryvdh/laravel-debugbar
+    c. composer install barryvdh/laravel-debugbar --dev
 
-    d. composer include barryvdh/laravel-debugbar
+    d. composer include barryvdh/laravel-debugbar --dev
 
 6. Apa saja fitur yang ada pada laravel debugbar
     
