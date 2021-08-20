@@ -200,3 +200,73 @@
     d. npm install && npm run build
 
 ## Memberikan Role Untuk User Terdaftar
+
+19. Perintah artisan untuk membuat file seeder adalah 
+
+    a. php artisan make:seed RolesTableSeeder
+
+    **b. php artisan make:seeder RolesTableSeeder**
+
+    c. php artisan create:seed RolesTableSeeder
+
+    d. php artisan create:seeder RolesTableSeeder
+
+20. Syntax untuk menambahkan role user saat register adalah
+    
+    a. $user->role('user');
+
+    b. $user->hasRole('user');
+
+    c. $user->haveRole('user');
+
+    **d. $user->assignRole('user');**
+
+21. Syntax untuk menjalankan seeder agar dapat disimpan di database adalah
+
+    a. php artisan migrate
+
+    b. php artisan migrate --seed
+
+    **c. php artisan db:seed**
+
+    d. php artisan db:seeder
+
+## Membuat User Admin
+
+22. Untuk membuat data admin yang sudah terverifikasi email di seeder maka kita perlu menambahkan code...
+
+    a. 'email_verified_at' => now,
+
+    b. 'email_verified_at' => $now,
+
+    **c. 'email_verified_at' => now(),**
+
+    d. 'email_verified_at' => $this->now,
+
+23. 
+    ```
+    protected function authenticated(Request $request, $user) {
+        if($user->hasRole('admin')) { 
+            return redirect()->route('admin'); 
+        }
+     } 
+    ```
+    Code tersebut artinya...
+
+    a. Jika user melakukan login maka akan meredirect ke halaman admin
+
+    **b. Jika user yang memiliki role admin melakukan login maka akan meredirect ke halaman admin**
+
+    c. Jika user yang memiliki role admin melakukan login maka akan meredirect ke halaman sebelumnya
+
+    d. Jika user yang memiliki role selain admin melakukan login maka akan meredirect ke halaman admin
+
+24.
+
+    a.
+
+    b.
+
+    c.
+
+    d.
