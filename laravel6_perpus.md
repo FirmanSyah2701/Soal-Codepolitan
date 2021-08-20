@@ -255,18 +255,89 @@
 
     a. Jika user melakukan login maka akan meredirect ke halaman admin
 
-    **b. Jika user yang memiliki role admin melakukan login maka akan meredirect ke halaman admin**
+    **b. Jika user yang memiliki role admin melakukan login maka akan meredirect ke route dengan nama admin**
 
-    c. Jika user yang memiliki role admin melakukan login maka akan meredirect ke halaman sebelumnya
+    c. Jika user yang memiliki role admin melakukan login maka akan meredirect ke halaman dashboard
 
     d. Jika user yang memiliki role selain admin melakukan login maka akan meredirect ke halaman admin
 
-24.
+24. Untuk menjalankan seeder hanya satu class seeder yaitu class AdminUserSeeder maka perlu menjalankan perintah artisan...
 
-    a.
+    a. php artisan db:seed -class=AdminUserSeeder
 
-    b.
+    **b. php artisan db:seed --class=AdminUserSeeder**
 
-    c.
+    c. php artisan db:seeder -class=AdminUserSeeder
 
-    d.
+    d. php artisan db:seeder --class=AdminUserSeeder
+
+## Membedakan Route Admin _ User
+
+25. Saat membuat file route baru maka perlu registrasikan file tersebut pada...
+    
+    a. AppServiceProvider
+
+    b. EventServiceProvider
+
+    **c. RouteServiceProvider**
+
+    d. AuthServiceProvider
+
+26. Agar route admin yang kita buat hanya bisa diakses oleh user yang memiliki role admin maka perlu menambahkan source code
+    
+    **a. ``Route::middleware('web', 'auth', 'role:admin')``**
+
+    b. ``Route::middleware('web', 'auth', 'admin')``
+
+    c. ``Route::middleware('auth', 'role:admin')``
+
+    d. ``Route::middleware('auth', 'admin')``
+
+27. Source code untuk mendefinisikan semua route dengan awalan admin. adalah
+    
+    a. ``middleware('admin.')``
+
+    b. ``prefix('admin.')``
+
+    **c. ``name('admin.')``**
+
+    d. ``namespace('admin.')``
+
+# Menyiapkan Dashboard Admin
+
+## Menyiapkan Halaman Admin
+
+28. Untuk menampilkan nama user yang sudah login pada blade adalah
+    
+    **``a. {{ auth()->user()->name }}``**
+
+    b. ``{{ $auth()->user()->name }}``
+
+    c. ``{{ user()->name }}``
+
+    d. ``{{ $>user()->name }}``
+
+29. Jika kita ingin membuat controller terpisah admin dan frontend maka perintah artisan yang dilakukan untuk membuat file controller pada namespace admin      
+    adalah... 
+
+    a. php artisan make:controller Admin\HomeController
+
+    **b. php artisan make:controller Admin\\HomeController**
+
+    c. php artisan make:controller Admin//HomeController
+
+    d. php artisan make:controller Admin//HomeController
+
+30. Saat kita membuat controller pada folder namespace Admin agar saat route kita tidak perlu mendefinisikan namespace dari folder Admin maka pada   
+    RouteServiceProvider perlu menambahkan source code...
+
+    **a. namespace($this->namespace . '\Admin')**
+
+    b. namespace($this->namespace . '\\Admin')
+
+    c. namespace($this->namespace . '/Admin')
+
+    d. namespace($this->namespace . '//Admin')
+
+
+31. 
