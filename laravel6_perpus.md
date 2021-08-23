@@ -128,9 +128,9 @@
 
     b. @sections('content') @endsections
 
-    c. @section('content')
+    c. @extends('content')
 
-    d. @sections('content')
+    d. @yield('content')
 
 
 ## Menyederhanakan Template dengan Subview
@@ -341,4 +341,290 @@
 
 ## Membuat Data Author
 
-31. 
+31. Apa yang perlu kita isikan false saat kita tidak butuh data created_at dan updated_at pada suatu tabel?
+    
+    a. public $time = false;
+
+    b. public $date = false;
+
+    c. public $datetime = false;
+
+    **d. public $timestamps = false;**
+
+32. Syntax untuk membuat data fake/dummy nama
+
+    a. 'name' => $faker->nama
+
+    **b. 'name' => $faker->name**
+
+    c. 'name' => $faker->named
+
+    d. 'name' => $faker->names
+
+33. Perintah untuk generate data factory author kedalam database adalah...
+
+    **a. factory(App\Author::class, 10)->create();**
+
+    b. factory(Author::class, 10)->create();
+
+    c. factory()->create(App\Author::class, 10);
+
+    d. factory()->create(Author::class, 10);
+
+## Membuat Data Buku
+
+34. Source code untuk mendapatkan data id secara random dengan model Author adalah
+
+    a. Author::inRandomOrder()->first()->id()
+
+    b. Author::inRandomOrder()->get()->id()
+
+    **c. Author::inRandomOrder()->first()->id**
+
+    d. Author::inRandomOrder()->get()->id
+
+35. Perintah artisan untuk membuat model dan factory sekaligus adalah
+   
+    a. php artisan make:factory Book -m
+
+    **b. php artisan make:model Book -f**
+
+    c. php artisan make:factory Book --m
+
+    d. php artisan make:model Book --f
+
+36. Salah satu situs penyedia berbagai foto yang bisa kita dapatkan secara random secara online adalah
+
+    **a. picsum.photos**
+
+    b. placeholder
+
+    c. random.photos
+
+    d. asset.photos
+
+## Menyingkat Generate Data
+
+37. Untuk generate factory atau data dummy tanpa harus menggunakan artisan tinker adalah dengan menaruh source code create factroy ke dalam class...
+
+    a. factory
+
+    b. model
+
+    **c. seeder**
+
+    d. migration
+
+38. composer dump-autoload adalah perintah...
+    
+    a. Untuk meload dan menregistrasikan secara otomatis package laravel dibuat
+
+    b. Untuk meload secara otomatis semua package laravel 
+
+    c. Untuk meload dan mendaftarkan namespace class yang telah dibuat
+
+    **d. Untuk meload dan mendaftarkan namespace class yang telah diubah**
+
+39. Perintah artisan untuk menjalankan migration beserta seeder nya adalah
+
+    a. php artisan migrate --seed
+
+    b. php artisan migrate --seeder
+
+    **c. php artisan migrate:fresh --seed**
+
+    d. php artisan migrate:fresh --seeder
+
+## Menampilkan Data Penulis - Menyiapkan Asset _ Tampilan
+
+40. package laravel untuk menampilkan data dalam bentuk table adalah
+
+    a. laravel-tabledata
+
+    **b. laravel-datatables**
+
+    c. laravel-tables
+
+    d. laravel-oracle
+
+41. Perintah artisan untuk membuat AuthorController dengan kebutuhan crud adalah
+
+    **a. php artisan make:controller AuthorController --resource**
+
+    b. php artisan make:controller AuthorController --resources
+
+    c. php artisan make:controller AuthorController --resourced
+
+    d. php artisan make:controller AuthorController --r
+
+42. Apa saja requirement yang dibutuhkan untuk menginstall laravel-datatables versi 9
+
+    a. php >= 7.0, laravel >= 5.4, jquery v1.10 
+
+    **b. php >= 7.0, laravel >= 5.4, jquery datatabkes v1.10**
+
+    c. php >= 8.0, laravel 6, jquery v1.10
+
+    d. php >= 8.0, laravel 6, jquery datatables v1.10
+
+## Menampilkan Data Penulis - Implementasi Dengan Laravel DataTable
+
+43. Syntax untuk menampilkan datatables dari table author adalah
+
+    **a. ``return datatables()->of(Author::query())->toJson();``**
+
+    b. ``return datatables()->on(Author::query())->toJson();``
+
+    c. ``return datatables()->json(Author::query())->toJson();``
+
+    d. ``return datatables()->json([Author::query()])->toJson();``
+
+44. Datatable menampilkan response berupa json sebaiknya untuk menampilkan datanya di... 
+
+    a. controller baru
+
+    b. dibawah fungsi resource
+
+    c. di dalam fungsi show resource
+
+    **d. A dan B benar**
+
+45. Blade directive yang mempunyai fungsi untuk menyisipkan suatu baris code dan dapat dipanggil oleh halaman yang dibutuhkan adalah...
+
+    a. include
+
+    **b. stack**
+
+    c. section
+
+    d. yield
+
+## Membuat Fungsi Tambah Penulis
+
+46. Source code untuk membuat data Author adalah...
+
+    **a. ``Author::create($request->only('name'));``**
+
+    b. ``Author::create([$request->only('name')]);``
+
+    c. ``Author::create($request->name);``
+
+    d. ``Author::create([$request-name]);``
+
+47. Solusi error mass assigment saat create data adalah menambahkan .... di dalam model 
+
+    a. protected $fillable = ['name'];
+
+    b. protected $fillable = [];
+
+    c. protected $guarded = [];
+
+    **d. A dan C benar**
+
+48. Fungsi untuk menambah data dalam controller adalah
+
+    a. create()
+
+    **b. store()**
+
+    c. edit()
+
+    d. update()
+
+## Membuat Fungsi Edit Data Penulis
+
+49. Kita dapat menggunakan fungsi latest pada eloquent jika...
+
+    a. memiliki created_at
+
+    b. memiliki updated_at
+
+    c. timestamps tidak bernilan false
+
+    **d. semua benar**
+
+50. Fungsi eloquent untuk mengurutkan nama secara abjad adalah
+
+    **a. orderBy('name, 'ASC')**
+
+    b. orderBy('name, 'DESC')
+
+    c. groupBy('name, 'ASC')
+
+    d. groupBy('name, 'DESC')
+
+51. Source code untuk mengubah data author menggunakan model binding adalah
+
+    a. ``Author::update($request->only('name'));``
+
+    b. ``Author::update([$request->only('name')]);``
+
+    **c. ``$author->update($request->only('name'));``**
+
+    d. ``$author::update([$request->only('name')]);``
+
+## Membuat Fungsi Hapus Penulis
+
+52. method controller yang digunakan untuk mengahpus data adalah
+
+    a. delete()
+
+    b. deleted()
+
+    **c. destroy()**
+
+    d. destroyed()
+
+53. Source code untuk membuat tombol hapus data yang benar di laravel adalah
+
+    a. 
+    ```
+    <form action={{ route('admin.author.destroy')}} method="POST">
+        <input type="submit" value="Hapus">
+    </form>
+    ```
+
+    b. 
+    ```
+    <form action={{ route('admin.author.destroy')}} method="POST">
+        @csrf
+        @method('DELETE')
+    </form>
+    ```
+
+    c. 
+    ```
+    <form action={{ route('admin.author.destroy')}} method="DELETE">
+        @csrf
+        @method('DESTROY')
+        <input type="submit" value="Hapus">
+    </form>
+    ```
+
+    **d. 
+    ```
+    <form action={{ route('admin.author.destroy')}} method="POST">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="Hapus">
+    </form>
+    ```
+    **
+
+54. Source code untuk menghapus data author menggunakan model binding adalah
+
+    a. ``Author::delete();``
+
+    b. ``Author::deleted();``
+
+    **c. ``$author->destroy();``**
+
+    d. ``$author::destroyed()``
+
+## Menambahkan Dialog Sebelum Hapus Data Penulis
+
+55.
+
+56.
+
+57.
