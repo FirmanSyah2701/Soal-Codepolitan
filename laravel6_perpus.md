@@ -623,8 +623,48 @@
 
 ## Menambahkan Dialog Sebelum Hapus Data Penulis
 
-55.
+55. Salah satu library untuk membuat dialog adalah
 
-56.
+    a. AlertDialog
+    
+    b. DialogAlert
 
-57.
+    **c. SweetAlert2**
+
+    d. Prompt
+
+56. Untuk mentrigger fungsi hapus pada delete form saat menekan tombol konfirmasi untuk menghapusnya perlu menaruh code nya...
+
+    **a. didalam if(result.value)**
+
+    b. sebelum if(result.value)
+
+    c. setelah if(result.value)
+
+    d. dimana saja
+
+57. Icon berhasil dalam sweetAlert adalah
+
+    a. warning
+
+    **b. success**
+
+    c. info
+
+    d. danger
+
+## Menambahkan Flash Message
+
+58.
+
+59.
+
+60.
+
+## Mengganti Alert Dengan Bootstrap Notify
+
+61.
+
+62.
+
+63.
