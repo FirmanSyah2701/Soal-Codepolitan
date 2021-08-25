@@ -655,16 +655,87 @@
 
 ## Menambahkan Flash Message
 
-58.
+58. Source code untuk membuat session adalah
 
-59.
+    a. with('success', 'Data berhasil disimpan');
 
-60.
+    b. with(['success', 'Data berhasil disimpan']);
+
+    c. session('success', 'Data berhasil disimpan');
+
+    d. session(['success', 'Data berhasil disimpan']);
+
+59. Source code untuk menampilkan alert atau flash message adalah
+
+    a. 
+    ```
+    @if(with('success'))
+        {{ with('success') }}
+    @endif
+    ```
+
+    b. 
+    ```
+    @if(message('success'))
+        {{ message('success') }}
+    @endif
+    ```
+
+    **
+    c. 
+    ```
+    @if(session('success'))
+        {{ session('success') }}
+    @endif
+    ```
+    **
+
+    d. 
+    ```
+    @if(sessions('success'))
+        {{ sessions('success') }}
+    @endif
+    ```
+
+60. Method with bisa dipakai saat mereturn...
+
+    a. request create
+
+    b. request update
+
+    c. request delete
+
+    **d. redirect**
 
 ## Mengganti Alert Dengan Bootstrap Notify
 
-61.
+61. Salah satu library untuk alert yang menggunakan framework bootstrap adalah...
 
-62.
+    a. Bootstrap Alert
+    
+    **b. Bootstrap Notify**
 
-63.
+    c. Bootsnipp
+
+    d. Bootstrap Message
+
+
+62. Apa saja yang bisa kita isi pada Bootstrap Notify?
+
+    a. message, title,
+
+    **b. message, type**
+
+    c. message, title, text, icon
+
+    d. message, title, text, type
+
+63. Source code untuk mengisi message dari session pada bootstrap notify adalah
+
+    a. message: session('success')
+    
+    b. message: sessions('success')
+
+    **c. message: 'session('success')'**
+
+    d. message: 'sessions('success')'
