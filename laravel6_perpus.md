@@ -513,13 +513,13 @@
 
 47. Solusi error mass assigment saat create data adalah menambahkan .... di dalam model 
 
-    a. protected $fillable = ['name'];
+    a. ``protected $fillable = ['name']``;
 
-    b. protected $fillable = [];
+    b. ``protected $fillable = []``;
 
-    c. protected $guarded = [];
+    c. ``protected $guarded = [];``
 
-    **d. A dan C benar**
+    **``d. A dan C benar``**
 
 48. Fungsi untuk menambah data dalam controller adalah
 
@@ -661,7 +661,7 @@
 
     b. with(['success', 'Data berhasil disimpan']);
 
-    c. session('success', 'Data berhasil disimpan');
+    **c. session('success', 'Data berhasil disimpan');**
 
     d. session(['success', 'Data berhasil disimpan']);
 
@@ -681,8 +681,7 @@
     @endif
     ```
 
-    **
-    c. 
+    **c. 
     ```
     @if(session('success'))
         {{ session('success') }}
@@ -739,3 +738,207 @@
     **c. message: 'session('success')'**
 
     d. message: 'sessions('success')'
+
+## Judul Halaman Dinamis _ Breadcrumbs
+
+64. Maksud dari source code ``{{ $title ?? 'Perpustakaan' }}`` adalah
+
+    a. Menampilakan variable title
+
+    b. Menset variable title dengan text Perpustakaan
+
+    c. Menampilkan variable title dan text perpustakaan
+
+    **d. Menampilkan variable title dan apabila variable title tidak terdaftar maka akan menampilkan text perpustakaan**
+
+65. Source code untuk menampilkan breadcrumbs yang sedang aktif adalah
+
+    a. {{ Breadcrumbs::render() }}
+
+    b. {{ Breadcrumbs::title() }}
+
+    c. {{ Breadcrumbs::render()->title }}
+
+    **d. {{ Breadcrumbs::current()->title }}**
+
+66. Dimana tempat untuk mendefinisikan breadcrumbs?
+
+    a. controllers/bradcrumbs.php
+
+    b. models/bradcrumbs.php
+
+    **c. routes/bradcrumbs.php**
+
+    d. resources/bradcrumbs.php
+
+## Menambahkan Validasi Pada Form
+
+67. Nama validasi yang mengaharuskan kita untuk tidak mengisi data/form kosong adalah
+
+    **a. required**
+
+    b. not_null
+
+    c. not_empty
+
+    d. min
+
+68. Source code untuk menampilkan pesan error dari validasi name adalah
+    
+    a. ``@if('name') <span class="help-block"> {{ $error }} </span> @endif``
+
+    b. ``@error('name') <span class="help-block"> {{ $error }} </span> @enderror``
+
+    c. ``@if('name') <span class="help-block"> {{ $message }} </span> @endif``
+
+    **d. ``@error('name') <span class="help-block"> {{ $message }} </span> @enderror``**
+
+69. Source code agar inputan field tidak hilang saat form error adalah
+
+    a. value="{{ $name }}
+
+    b. value="{{ $old('name') }}
+
+    **c. value="{{ old('name') }}**
+
+    d. value="{{ ('name') }}
+
+## Menyederhanakan Routing dengan Route Resource
+
+70. Untuk menyederhanakan route yang controller nya memiliki crud kita dapat menggunakan route helper...
+
+    a. resource
+
+    **b. resources**
+
+    c. list
+
+    d. lists
+
+71. Saat terjadi error dalam menggunakan route resource dikarenakan ada kesamaan nama url cara penanganannya adalah...
+    
+    a. Menaruh route resource diatas
+
+    **b. Menaruh route resource dibawah**
+
+    c. Mengganti salah satu nama url route
+    
+    d. a dan c benar
+
+72. Source code untuk menggunakan route resource adalah...
+
+    a. Route::resource('author', 'AuthorController@index')
+
+    b. Route::resource('author', 'AuthorController@create')
+
+    c. Route::resource('author', 'AuthorController@store')
+
+    **d. Route::resource('author', 'AuthorController')**
+
+## Menampilkan Data Modul Buku
+
+73. cara menambahkan variable title pada controller agar bisa diakses pada halaman index adalah...
+
+    a. return view('index')->(['title' => 'Perpus']);
+
+    **b. return view('index', ['tilte' => 'Perpus']);** 
+
+    c. return view('index')->(['title' = 'Perpus']);
+
+    d. return view('index', ['tilte' = 'Perpus']);
+
+74. Source code menambahkan relasi 1 author memiliki banyak buku adalah...
+
+    **a. 
+    ```
+    public function books(){
+        return $this->hasMany(Book::class);
+    }
+    ```
+    **
+
+    b.
+    ```
+    public function books(){
+        return $this->hasMany('Book');
+    }
+    ```
+
+    c.
+    ```
+    public function books(){
+        return $this->belongsTo(Book::class);
+    }
+    ```
+
+    d.
+    ```
+    public function books(){
+        return $this->belongsTo('Book');
+    }
+    ```
+
+75. Source code untuk mengambil data nama author melalui model book adalah...
+
+    a. 
+    ```
+    function(Book $book){
+        return $book->name;
+    }
+    ```
+
+    b.
+    ```
+    function(Book $book){
+        return $book->author()->name;
+    }
+    ```
+
+    **c. 
+    ```
+    function(Book $book){
+        return $book->author->name
+    }
+    ```
+    **
+
+    d.
+    ```
+    function(Book $book){
+        return $book->$author->name
+    }
+    ```
+
+## Membuat Form Tambah Buku
+
+76. Untuk inputan file pada form perlu menambahkan property  
+
+    a. ``enctype="application/x-www-form-urlencode"``
+
+    b. ``enctype="application/json"``
+
+    **c. ``enctype="multipart/form-data"``**
+
+    d. ``enctype="text/plain"``
+
+77. Library untuk select option yang memiliki pencarian adalah...
+
+    a. select2 option
+
+    b. select two option 
+
+    **c. select2**
+
+    d. select two
+
+78. Source code untuk mendefinisikan class yang digunakan sebagai select2...  
+
+    a.`` $('.select2').select2;``
+
+    **b. ``$('.select2').select2();``**
+
+    c. ``$(['.select2']).select2;``
+
+    d. ``$(['.select2']).select2();``
+
+## Membuat Fungsi Simpan Buku _ Menanangani Asset Gambarnya
