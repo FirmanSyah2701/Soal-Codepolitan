@@ -942,3 +942,328 @@
     d. ``$(['.select2']).select2();``
 
 ## Membuat Fungsi Simpan Buku _ Menanangani Asset Gambarnya
+
+79. Dalam table books pada field cover terdapat berbagai macam value diantaranya picsum, assets dan null untuk get data cover dengan macam ini penanganannya adalah...
+
+    **a.
+    ```
+    public function getCover(){
+        if(substr($this->cover,0,5) == "https"){
+            return $this->cover;
+        }
+
+        if($this->cover){
+            return asset($this->cover);
+        }
+
+        return 'via.placeholder.com/728x90.png?text=No+Cover';
+    }
+    ```
+    **
+
+    b.
+    ```
+    public function getCover(){
+        if(substr($this->cover,1,5) == "https"){
+            return $this->cover;
+        }
+
+        if($this->cover){
+            return asset($this->cover);
+        }
+
+        return 'via.placeholder.com/728x90.png?text=No+Cover';
+    }
+    ```
+
+    c.
+    ```
+    public function getCover(){
+        if(substr($this->cover,0,5) == "https"){
+            return assets($this->cover);
+        }
+
+        if($this->cover){
+            return $this->cover;
+        }
+
+        return 'via.placeholder.com/728x90.png?text=No+Cover';
+    }
+    ```
+
+    d.
+    ```
+    public function getCover(){
+        if(substr($this->cover,1,5) == "https"){
+            return assets($this->cover);
+        }
+
+        if($this->cover){
+            return $this->cover;
+        }
+
+        return 'via.placeholder.com/728x90.png?text=No+Cover';
+    }
+    ```
+
+80. Cara menangani column 'cover' cannot be null saat dalam sistem tidak wajib menginputkan cover adalah
+
+    a. ``$table->string('cover');``
+
+    b. ``$table->string('cover')->default('null');``
+
+    **c. ``$table->string('cover')->nullable()->default(null);``**
+
+    d. ``$table->string('cover')->nullable()->default('null');``
+
+
+81. Source code untuk memanggil method getCover() dalam editColumn datatables adalah...
+
+    a. 
+    ```
+    ->editColumn('cover', function(Book $model) {
+        return '<img src="'. $model->getCover .'" height="150px">';
+    })
+    ```
+
+    **b. 
+    ```
+    ->editColumn('cover', function(Book $model) {
+        return '<img src="'. $model->getCover() .'" height="150px">';
+    })
+    ```
+    **
+
+    c. 
+    ```
+    ->editColumn('cover', function(Book $model) {
+        return '<img src="'. $model->cover .'" height="150px">';
+    })
+    ```
+
+    d. 
+    ```
+    ->editColumn('cover', function(Book $model) {
+        return '<img src="'. $model->cover->getCover() .'" height="150px">';
+    })
+    ```
+
+## Membuat Fungsi Update Buku
+
+82. Saat update data buku muncul error The POST is not supported for this route penanganannya adalah...
+
+    a. @method("POST")
+
+    **b. @method("PUT")**
+
+    c. method="POST"
+
+    d. method="PUT"
+
+83. Source code pada halaman edit buku untuk option agar otomatis selected nama penulis nya berdasarkan id yang tersimpan di database adalah...
+
+    a.
+    ``` 
+    <option value="{{ $author->id }}"
+        @if($author->id = $book->author_id)
+            selected
+        @endif
+    >
+    ```
+
+    **b.
+    ``` 
+    <option value="{{ $author->id }}"
+        @if($author->id === $book->author_id)
+            selected
+        @endif
+    >
+    ```
+    **
+
+    c. 
+    ```
+    <option value="{{ $author->id }}">
+    @if($author->id = $book->author_id)
+        selected
+    @endif
+    ```
+
+    d. 
+    ```
+    <option value="{{ $author->id }}">
+    @if($author->id === $book->author_id)
+        selected
+    @endif
+    ```
+
+84. Source code untuk update/ubah data buku jika cover tidak diubah maka akan tetap menyimpan cover yang lama jika diubah maka akan menyimpan cover yang baru dengan menghapus cover yang lama adalah...
+
+    a.
+    ``` 
+    $cover = null;
+    if($request->hasFile('cover')){
+        Storage::delete($book->cover);
+        $cover = $request->file('cover')->store('assets/covers');
+    }
+    ```
+
+    b.
+    ``` 
+    $cover = null;
+    if($request->hasFile('cover')){
+        Storage::destroy($book->cover);
+        $cover = $request->file('cover')->store('assets/covers');
+    }
+    ```
+
+    **c.
+    ``` 
+    $cover = $book->cover;
+    if($request->hasFile('cover')){
+        Storage::delete($book->cover);
+        $cover = $request->file('cover')->store('assets/covers');
+    }
+    ```
+    **
+
+    d.
+    ``` 
+    $cover = $book->cover;
+    if($request->hasFile('cover')){
+        Storage::destroy($book->cover);
+        $cover = $request->file('cover')->store('assets/covers');
+    }
+    ```
+
+## Menghapus Data Buku
+
+85. Source code yang benar untuk membuat fungsi hapus buku pada controller adalah...
+
+    a. 
+    ```
+    public function destroy(){
+        $book->delete();
+        return redirect()->route('admin.book.index')->withDanger('Data buku berhasil dihapus');
+    }
+    ```
+
+    b. 
+    ```
+    public function destroy($id){
+        $book->delete();
+        return redirect()->route('admin.book.index')->withDanger('Data buku berhasil dihapus');
+    }
+    ```
+
+    **c. 
+    ```
+    public function destroy(Book $book){
+        $book->delete();
+        return redirect('admin.book.index')->route()->withDanger('Data buku berhasil dihapus');
+    }
+    ```
+    **
+
+    d. 
+    ```
+    public function destroy(Book $book){
+        $book->delete();
+        return redirect()->route('admin.book.index')->withDanger('Data buku berhasil dihapus');
+    }
+    ```
+
+86.
+
+87.
+
+## Tips Menangani Aset Project
+
+88. dataTables.bootstrap.min.css dibutuhkan hanya pada file index karena itu sebelum tutup head perlu menambahkan syntax
+
+    **a. @stack('styles')**
+
+    b. @push('styles')
+
+    c. @yield('styles')
+
+    d. @section('styles')
+
+89. Source code untuk memanggil memanggil dataTables.bootstrap.min.css pada file index.blade.php adalah...
+
+    a. 
+    ```
+    @stack('styles') 
+        <link rel="stylesheet' href='{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}'> 
+    @endstack
+    ```
+
+    **b. 
+    ```
+    @push('styles') 
+        <link rel="stylesheet' href='{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}'> 
+    @endpush
+    ```
+    **
+
+    c. 
+    ```
+    @section('styles') 
+        <link rel="stylesheet' href='{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}'> 
+    @endsection
+    ```
+
+    d.
+    ```
+    @sections('styles') 
+        <link rel="stylesheet' href='{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}'> 
+    @endsections
+    ```
+
+90. Pada index.blade.php library javascript datatables bisa diletakkan...
+
+    a. sebelum @section('content')
+
+    b. didalam @section('content')
+
+    c. didalam @push('styles')
+
+    **d. didalam @push('scripts')**
+
+# Menyiapkan Dashboard User
+
+## Membuat Tampilan Halaman Depan
+
+91. Selain Bootstrap kita dapat membuat frontend framework css dengan...
+
+    a. Material icon
+
+    **b. Materialize**
+
+    c. Font awesome
+
+    d. Jquery
+
+92. Pada materialize saat klik menu pada sidenav tidak dapat berjalan maka solusi nya adalah...
+
+    a. ``<script> init();  </script>``
+
+    b. ``<script> Init();  </script>``
+
+    c. ``<script> M.Init();  </script>``
+
+    **d. ``<script> M.AutoInit();  </script>``**
+
+93. Pada materialize saat icon tidak muncul maka solusi nya adalah...
+
+    **a. ``<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">``**
+
+    b. ``<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">``
+
+    c. ``<link href="https://fonts.googleapis.com/css?family=Tenor Sans" rel='stylesheet'>``
+
+    d. ``<link href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css" rel='stylesheet'>``
+
+## Membuat Template Halaman Depan
+
+94.
