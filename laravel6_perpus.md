@@ -1266,4 +1266,185 @@
 
 ## Membuat Template Halaman Depan
 
-94.
+94. Pada frontend/tampilan halaman homepage dapat dibuatkan template menjadi beberapa partials file yaitu...
+
+    a. head, sidebar, script
+
+    b. navigation, style. script
+
+    **c. head, navigation, script**
+
+    d. head, header, script
+
+95. View [frontend.templates.partials.head] not found artinya...
+
+    a. tidak folder head pada directory frontend.templates.partials
+
+    b. tidak file head pada directory frontend.templates.partials.head
+
+    **c. tidak file head pada directory frontend.templates.partials**
+
+    d. tidak file default pada directory frontend.templates.partials
+
+## Menampilkan Data Buku di Halaman Depan
+
+96. Source code untuk mengatur tinggi gambar menjadi 200 pixel adalah...
+
+    a. ``<img src="{{ $book->getCover() }}" width="200%">``
+
+    b. ``<img src="{{ $book->getCover() }}" width="200px">``
+
+    c. ``<img src="{{ $book->getCover() }}" height="200%">``
+
+    **d. ``<img src="{{ $book->getCover() }}" height="200px">``**
+
+97. Apabila dalam card ukuran nya berbeda dikarenakan terlalu panjangnya judul maka source code meringkas nya yaitu...
+
+    **a. {{ Str::limit($book->title, 30) }}**
+
+    b. {{ str::limit($book->title, 30) }}
+
+    c. {{ str_limit($book->title, 30) }}
+
+    d. {{ string::limit($book->title, 30) }}
+
+98. Source code untuk membuat data buku dengan pagination pada setiap page nya berjumlah 10 yaitu...
+
+    a. $book = Book::pagination(10);
+
+    b. $book = Book::get()->pagination(10);
+
+    **c. $book = Book::paginate(10);**
+    
+    d. $book = Book::get()->paginate(10);
+
+## Membuat Pagination Custom
+
+99. Perintah artisan untuk melihat vendor-vendor yang terdaftar pada aplikasi laravel adalah
+
+    a. php artisan list:vendor
+
+    **b. php artisan vendor:publish**
+
+    c. php artisan vendor:publish -list
+
+    d. php artisan vendor:publish --list
+
+100. Vendor ang perlu dipublish untung membuat custom pagination adalah...
+
+    a. Illuminate\Pagination\PaginationServiceProvider
+
+    b. Spatie\Permission\PermissionServiceProvider
+
+    **c. laravel-pagination**
+
+    d. config
+
+101. Source code untuk memanggil file pagination custom yaitu materialize dari laravel-pagination adalah..
+
+    a. {{ $book->links('default') }}
+
+    b. {{ $book->links('materialize') }}
+
+    c. {{ $book->links('vendor.pagination.default') }}
+
+    **d. {{ $book->links('vendor.pagination.materialize') }}**
+
+## Menyesuaikan Tampilan Register
+
+102. Source code untuk menggubah template register ke frontend.templates.default adalah
+
+    **a. @extends('frontend.templates.partials.default')**
+
+    b. @include('frontend.templates.partials.default')
+
+    c. @section('frontend.templates.partials.default')
+
+    d. @yield('frontend.templates.partials.default')
+
+103. class materialize untuk membuat icon berada didepan adalah
+
+    a. suffix
+
+    **b. prefix**
+
+    c. prev
+
+    d. next
+
+104. source code untuk mempercantik tampilan error dengan menggunakan materialize adalah...
+
+    a. class="@error('name') is-invalid @enderror"
+
+    **b. class="@error('name') invalid @enderror"**
+
+    c. class="@error('name') is-valid @enderror"
+
+    d. class="@error('name') valid @enderror"
+
+## Menyesuaikan Tampilan Login
+
+105. Apa saja form/field yang dibutuhkan untuk login?   
+    
+    a. name, email, password, password confirmation
+
+    b. email, password, password confirmation
+
+    c. name, email, password
+
+    **d. email, password**
+
+106. Source code yang benar untuk form login adalah..
+
+    **a. ``<form action="route('login')" method="POST"> @csrf </form>``**
+
+    b. ``<form action="route('admin.login')" method="POST"> @csrf </form>``
+
+    c. ``<form action="route('user.login')" method="POST"> @csrf </form>``
+
+    d. ``<form action="route('signin')" method="POST"> @csrf </form>``
+
+107. Source code untuk mengubah text button dari Register ke Login adalah
+
+    a. ``<input type="submit" class="vawes-effect waves-light btn red accent-1"> Login``
+
+    b. ``<input type="submit" value="" class="vawes-effect waves-light btn red accent-1"> Login``
+
+    **c. ``<input type="submit" value="Login" class="vawes-effect waves-light btn red accent-1">``**
+
+    d. ``<input type="submit" id="Login" class="vawes-effect waves-light btn red accent-1">``
+
+## Membuat Halaman Detail Buku
+
+108. Source code untuk membuat route dengan BookController dengan method show yang berada pada direktory Frontend adalah
+    
+    a. Route::get('/book/{book}', 'BookController@show')->name('book.show');
+
+    b. Route::get('/book/{book}', 'Frontend\BookController@show')->name('book.show');
+
+    **c. Route::get('/book/{book}', 'Frontend\\BookController@show')->name('book.show');**
+
+    d. Route::get('/book/{book}', 'Frontend//BookController@show')->name('book.show');
+
+109. Salah satu method untuk melihat/mengecek nilai objek dari book didalam controller adalah
+    
+    **a. dd($book);**
+
+    b. console.log($book);
+
+    c. printf($book);
+
+    d. show($book);
+
+110. Source code untuk menjadikan judul buku sebagai link untuk show detail buku adalah
+    
+    a. ``<a href="{{ route('book.show', $book) }}"> {{ Str::limit($book->title) }} </a>``
+
+    b. ``<a href="{{ route('book.show', $book->id) }}"> {{ Str::limit($book->title) }} </a>``
+
+    c. ``<a href="{{ route('book.show/{$book}') }}"> {{ Str::limit($book->title) }} </a>``
+
+    **d. a dan b benar**
+
+
+## Membuat Section Buku Lainnya Dari Penulis
