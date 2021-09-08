@@ -1446,5 +1446,201 @@
 
     **d. a dan b benar**
 
-
 ## Membuat Section Buku Lainnya Dari Penulis
+
+111. Pada model author terdapat method books yang dimana relasinya satu author dapat memiliki banyak buku. Source code untuk mendapatkan data buku lainnya berdasarkan author adalah...
+
+    **a. @foreach($book->author->books)**
+
+    b. @foreach($book->author->books())
+
+    c. @foreach($book->author()->books)
+
+    d. @foreach($book->author()->books())
+
+112. Method untuk mendapatkan data 4 jumlah data adalah..
+
+    a. get(4)
+
+    **b. take(4)**
+
+    c. max(4)
+
+    d. min(4)
+
+113. Method untuk mendapatkan data secara acak adalah
+
+    a. rand()
+
+    b. random()
+
+    **c. shuffle()**
+
+    d. inRandom()
+
+## Membuat Fungsi Pinjam Buku
+
+114. Terdapat error Missing required parameters for [Route:book.borrow][URI:book/{book}/borrow] solusi nya adalah 
+
+    **a. {{ route('book.borrow', $book) }}**
+
+    b. {{ route(('book.borrow'), $book) }}
+
+    c. {{ route('book.borrow/$book') }}
+
+    d. {{ route('book.borrow/'.$book) }}
+
+115. Source code untuk membuat fungsi borrow dengan menggunakan model BorrowHistory adalah
+
+    a.
+    ``` 
+    BorrowHistory::create([
+        'user_id' => Auth,
+        'book_id' => $book
+    ])
+    ```
+
+    b.
+    ``` 
+    BorrowHistory::create([
+        'user_id' => Auth::id,
+        'book_id' => $book->id
+    ])
+    ```
+
+    c.
+    ``` 
+    BorrowHistory::create([
+        'user_id' => auth()->id,
+        'book_id' => $book
+    ])
+    ```
+
+    **d.
+    ``` 
+    BorrowHistory::create([
+        'user_id' => auth()->id,
+        'book_id' => $book->id
+    ])
+    ```
+    **
+
+116. Source code agar route book.borrow hanya dapat diakses oleh user yang login adalah
+
+    a. Route::post('book/{book}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->prefix('auth')
+
+    b. Route::post('book/{book}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->prefix('user')
+
+    **c. Route::post('book/{book}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->middleware('auth')**
+ 
+    d. Route::post('book/{book}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->middleware('user')
+
+## Fungsi Pinjam Buku dengan Eloquent Relationship
+
+117. Source code untuk menambahkan relasi belongsToMany borrow_history pada model User adalah...
+    
+    **
+    a.
+    ```
+    public function borrow()
+    { 
+        return $this->belongsToMany(Book::class, 'borrow_history'); 
+    }
+    ```
+    **
+
+    b.
+    ```
+    public function borrow()
+    { 
+        return $this->belongsToMany(User::class, 'borrow_history'); 
+    }
+    ```
+
+    c.
+    ```
+    public function borrowed()
+    { 
+        return $this->belongsToMany(Book::class, BorrowHistory); 
+    }
+    ```
+
+    d.
+    ```
+    public function borrowed()
+    { 
+        return $this->belongsToMany(User::class, BorrowHistory); 
+    }
+    ```
+
+118. Source code untuk redirect ke halaman yang sama adalah
+    
+    **a. return redirect()->back();**
+
+    b. return redirect()->route()->back();
+
+    c. return redirect()->prev();
+
+    d. return redirect()->route()->prev();
+
+119. Source code untuk menambahkan buku yang dipinjam melalui user yang login 
+    
+    a.
+    ```
+    $user = auth()->id;
+    $user->borrow()->attach($book);
+    ```
+
+    **
+    b.
+    ```
+    $user = auth()->user();
+    $user->borrow()->attach($book);
+    ```
+    **
+
+    c.
+    ```
+    $user = auth()->id;
+    $user->borrow()->create($book);
+    ```
+
+    d.
+    ```
+    $user = auth()->user();
+    $user->borrow()->create($book);
+    ```
+
+## Menyempurnakan Proses Peminjaman Buku
+
+120. Dalam materialize untuk menampilkan pesan feedback adalah
+
+    a. alert
+
+    b. dialog
+
+    c. toasts
+
+    d. flash message
+
+121. Source code untuk mengurangi qty saat meminjam buku
+
+    a. $book->increment('qty');
+
+    **b. $book->decrement('qty');**
+
+    c. $book->min('qty');
+
+    d. $book->qty - 1;
+
+122. Source code agar tidak boleh meminjam buku yang sama adalah
+    
+    **a. if($user->borrow()->where('books.id', $book->id)->count() > 0)**
+
+    b. if($user->borrow()->where('books.id', $book->id)->count() >= 0)
+
+    c. if($user->borrow()->where('books.id', $book->id)->count() == 0)
+
+    d. if($user->borrow()->where('books.id', $book->id)->count != 1)
+
+## Membenahi Navigasi _ Relasi User dan Buku
