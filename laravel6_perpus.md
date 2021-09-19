@@ -1290,7 +1290,7 @@
 
     **d. ``<img src="{{ $book->getCover() }}" height="200px">``**
 
-95. Apabila dalam card ukuran nya berbeda dikarenakan terlalu panjangnya judul maka source code untuk meringkas nya dalam laravel 6 yaitu...
+95. Apabila dalam card ukuran nya berbeda dikarenakan terlalu panjangnya judul, source code untuk meringkas nya dalam laravel 6 yaitu...
 
     **a. {{ Str::limit($book->title, 30) }}**
 
