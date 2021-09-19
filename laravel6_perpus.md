@@ -1344,15 +1344,15 @@
 
 ## Menyesuaikan Tampilan Register
 
-100. Source code untuk menggubah template register ke frontend.templates.default adalah...
+100. Source code untuk merubah template register ke frontend.templates.default adalah
 
-    **a. ``@extends('frontend.templates.partials.default')``**
+    a. @yield('frontend.templates.partials.default')
 
-    b. ``@include('frontend.templates.partials.default')``
+    b. @include('frontend.templates.partials.default')
 
-    c. ``@section('frontend.templates.partials.default')``
+    **c. @extends('frontend.templates.partials.default')**
 
-    d. ``@yield('frontend.templates.partials.default')``
+    d. @section('frontend.templates.partials.default')
 
 101. Class materialize untuk membuat icon berada didepan adalah...
 
@@ -1388,23 +1388,23 @@
 
 104. Source code yang benar untuk form login adalah..
 
-    **a. ``<form action="{{ route('login') }}" method="POST"> @csrf </form>``**
+    **a. <form action="{{ route('login') }}" method="POST"> @csrf </form>**
 
-    b. ``<form action="{{ route('admin.login') }}" method="POST"> @csrf </form>``
+    b. <form action="{{ route('admin.login') }}" method="POST"> @csrf </form>
 
-    c. ``<form action="{{ route('user.login') }}" method="POST"> @csrf </form>``
+    c. <form action="{{ route('user.login') }}" method="POST"> @csrf </form>
 
-    d. ``<form action="{{ route('signin') }}" method="POST"> @csrf </form>``
+    d. <form action="{{ route('signin') }}" method="POST"> @csrf </form>
 
 105. Source code untuk mengubah text button dari Register ke Login adalah
 
-    a. ``<input type="submit" class="vawes-effect waves-light btn red accent-1"> Login``
+    a. <input type="submit" class="vawes-effect waves-light btn red accent-1"> Login
 
-    b. ``<input type="submit" value="" class="vawes-effect waves-light btn red accent-1"> Login``
+    b. <input type="submit" value="" class="vawes-effect waves-light btn red accent-1"> Login
 
-    **c. ``<input type="submit" value="Login" class="vawes-effect waves-light btn red accent-1">``**
+    **c. <input type="submit" value="Login" class="vawes-effect waves-light btn red accent-1">**
 
-    d. ``<input type="submit" id="Login" class="vawes-effect waves-light btn red accent-1">``
+    d. <input type="submit" id="Login" class="vawes-effect waves-light btn red accent-1">
 
 ## Membuat Halaman Detail Buku
 
@@ -1430,11 +1430,11 @@
 
 108. Source code untuk menjadikan judul buku sebagai link untuk show detail buku adalah
     
-    a. ``<a href="{{ route('book.show', $book) }}"> {{ Str::limit($book->title) }} </a>``
+    a. <a href="{{ route('book.show', $book) }}"> {{ Str::limit($book->title) }} </a>
 
-    b. ``<a href="{{ route('book.show', $book->id) }}"> {{ Str::limit($book->title) }} </a>``
+    b. <a href="{{ route('book.show', $book->id) }}"> {{ Str::limit($book->title) }} </a>
 
-    c. ``<a href="{{ route('book.show/{$book}') }}"> {{ Str::limit($book->title) }} </a>``
+    c. <a href="{{ route('book.show/{$book}') }}"> {{ Str::limit($book->title) }} </a>
 
     **d. a dan b benar**
 
@@ -1485,7 +1485,7 @@
 113. Source code untuk membuat fungsi borrow dengan menggunakan model BorrowHistory adalah...
 
     a.
-    ```php
+    ```
     BorrowHistory::create([
         'user_id' => Auth,
         'book_id' => $book
@@ -1493,7 +1493,7 @@
     ```
 
     b.
-    ```php
+    ```
     BorrowHistory::create([
         'user_id' => Auth::id,
         'book_id' => $book->id
@@ -1501,7 +1501,7 @@
     ```
 
     c.
-    ```php
+    ```
     BorrowHistory::create([
         'user_id' => auth()->id,
         'book_id' => $book
@@ -1509,7 +1509,7 @@
     ```
 
     **d.
-    ```php
+    ```
     BorrowHistory::create([
         'user_id' => auth()->id,
         'book_id' => $book->id
@@ -1531,9 +1531,8 @@
 
 115. Source code untuk menambahkan relasi belongsToMany borrow_history pada model User adalah...
     
-    **
-    a.
-    ```php
+    **a.
+    ```
     public function borrow()
     { 
         return $this->belongsToMany(Book::class, 'borrow_history'); 
@@ -1542,7 +1541,7 @@
     **
 
     b.
-    ```php
+    ```
     public function borrow()
     { 
         return $this->belongsToMany(User::class, 'borrow_history'); 
@@ -1550,7 +1549,7 @@
     ```
 
     c.
-    ```php
+    ```
     public function borrowed()
     { 
         return $this->belongsToMany(Book::class, BorrowHistory); 
@@ -1558,7 +1557,7 @@
     ```
 
     d.
-    ```php
+    ```
     public function borrowed()
     { 
         return $this->belongsToMany(User::class, BorrowHistory); 
@@ -1578,27 +1577,27 @@
 117. Source code untuk menambahkan buku yang dipinjam melalui user yang login 
     
     a.
-    ```php
+    ```
     $user = auth()->id;
     $user->borrow()->attach($book);
     ```
 
     **
     b.
-    ```php
+    ```
     $user = auth()->user();
     $user->borrow()->attach($book);
     ```
     **
 
     c.
-    ```php
+    ```
     $user = auth()->id;
     $user->borrow()->create($book);
     ```
 
     d.
-    ```php
+    ```
     $user = auth()->user();
     $user->borrow()->create($book);
     ```
@@ -1642,7 +1641,7 @@
 121. Syntax directive blade yang berfungsi untuk mengecek menu login dan register hanya bisa diakses oleh user yang belum login adalah...
     
     a. 
-    ```php
+    ```
     @auth
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('Register') }}">Register</a></li> 
@@ -1650,7 +1649,7 @@
     ```
 
     **b. 
-    ```php
+    ```
     @guest 
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('register') }}">Register</a></li>
@@ -1659,14 +1658,14 @@
     **
 
     c.
-    ```php 
+    ``` 
     @unless 
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('register') }}">Register</a></li>
     @endunless
     ```
     d. 
-    ```php
+    ```
     @once 
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('Register') }}">Register</a></li>
@@ -1686,7 +1685,7 @@
 123. Source code untuk mentrigger form post logout dengan id logout-form adalah...
 
     **a.
-    ```php
+    ```
     <li><a href="{{ route('logout')}}" 
         onclick="event.preventDefault(); 
         document.getElementById('logout-form').submit();">Logout</a>
@@ -1695,7 +1694,7 @@
     **
 
     b.
-    ```php
+    ```
     <li><a href="{{ route('logout')}}" 
         onclick="event.preventDefault(); 
         document.getElementByClass('logout-form').submit();">Logout</a>
@@ -1703,7 +1702,7 @@
     ```
 
     c.
-    ```php
+    ```
     <li><a href="{{ route('logout')}}" 
         onclick="event.preventDefault(); 
         document.getElementByTag('logout-form').submit();">Logout</a>
@@ -1711,7 +1710,7 @@
     ```
 
     d.
-    ```php
+    ```
     <li><a href="{{ route('logout')}}" 
         onclick="event.preventDefault(); 
         document.write('logout-form').submit();">Logout</a>
@@ -1745,7 +1744,7 @@
 126. Solusi saat tombol Pinjam buku tidak berfungsi adalah dengan mengetikkan source code...
     
     a.
-    ```php
+    ```
     <form action="{{ route('book.borrow') }}" method="GET">
         @csrf
         <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
@@ -1753,7 +1752,7 @@
     ```
 
     b.
-    ```php
+    ```
     <form action="{{ route('book.borrow') }}" method="POST">
         @csrf
         <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
@@ -1761,7 +1760,7 @@
     ```
 
     c.
-    ```php
+    ```
     <form action="{{ route('book.borrow', $book) }}" method="GET">
         @csrf
         <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
@@ -1769,7 +1768,7 @@
     ```
 
     **d.
-    ```php
+    ```
     <form action="{{ route('book.borrow', $book) }}" method="POST">
         @csrf
         <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
@@ -1888,7 +1887,7 @@
 137. Cara membuat scope function yang benar adalah
 
     a.
-    ```php
+    ```
     public function scopeIsBorrowed()
     {
         return $query->where('returned_at', null);
@@ -1896,7 +1895,7 @@
     ```
 
     **b.
-    ```php
+    ```
     public function scopeIsBorrowed($query)
     {
         return $query->where('returned_at', null);
@@ -1905,7 +1904,7 @@
     **
 
     c.
-    ```php
+    ```
     public function scopeisborrowed()
     {
         return where('returned_at', null);
@@ -1913,7 +1912,7 @@
     ```
 
     d.
-    ```php
+    ```
     public function isBorrowed($query)
     {
         return $query->where('returned_at', null);
@@ -1957,20 +1956,20 @@
 140. Source code yang benar untuk menggunakan lazy load adalah
 
     **a. 
-    ```php
+    ```
     $book = Book::orderBy('title', 'ASC')->get();
     $book->load('author');
     ```
     **
 
     b.
-    ```php
+    ```
     $book = Book::orderBy('title', 'ASC')->get();
     $book->with('author');
     ```
 
     c.
-    ```php
+    ```
     $book = Book::orderBy('title', 'ASC')->get();
     $book->lazy('author');
     ```
@@ -1992,7 +1991,7 @@
     ```
     
     a. 
-    ```javascript
+    ```
         columns: [
             { data: 'DT_RowIndex', orderable: false, searchable: false }
             { data: 'title' }
@@ -2002,7 +2001,7 @@
     ```
 
     b. 
-    ```javascript
+    ```
         columns: [
             { data: 'DT_RowIndex', orderable: false, searchable: false };
             { data: 'title' };
@@ -2012,7 +2011,7 @@
     ```
 
     **c. 
-    ```javascript
+    ```
         columns: [
             { data: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'title' },
@@ -2023,7 +2022,7 @@
     **
 
     d. 
-    ```javascript
+    ```
         columns: [
             data: 'DT_RowIndex', orderable: false, searchable: false,
             data: 'title',
@@ -2071,8 +2070,8 @@
     ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
-            ->where('returned_at', null)
-            ->count() < 0;
+        ->where('returned_at', null)
+        ->count() < 0;
     }
     ```
 
@@ -2080,8 +2079,8 @@
     ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
-            ->where('returned_at', null)
-            ->count() <= 0;
+        ->where('returned_at', null)
+        ->count() <= 0;
     }
     ```
 
@@ -2089,8 +2088,8 @@
     ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
-            ->where('returned_at', null)
-            ->count() > 0;
+        ->where('returned_at', null)
+        ->count() > 0;
     }
     ```
     **
@@ -2099,8 +2098,8 @@
     ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
-            ->where('returned_at', null)
-            ->count() >= 0;
+        ->where('returned_at', null)
+        ->count() >= 0;
     }
     ```
 
@@ -2136,7 +2135,7 @@
 
     **d. {{ $book->borrowed_count }}**
 
-150. fungsi orderBy saat tidak di set parameter keduanya asc atau desc maka yang terjadi adalah
+150. fungsi orderBy saat tidak di set parameter keduanya asc atau desc maka yang terjadi adalah...
 
     a. error
 
