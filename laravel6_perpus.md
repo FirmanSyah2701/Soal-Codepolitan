@@ -1169,8 +1169,6 @@
     }
     ```
 
-minus
-
 ## Tips Menangani Aset Project
 
 86. dataTables.bootstrap.min.css dibutuhkan hanya pada file index karena itu sebelum tutup head perlu menambahkan syntax
@@ -1279,8 +1277,6 @@ minus
     **c. tidak file head pada directory frontend.templates.partials**
 
     d. tidak file default pada directory frontend.templates.partials
-
-minus
 
 ## Menampilkan Data Buku di Halaman Depan
 
@@ -1486,7 +1482,7 @@ minus
 
     d. {{ route('book.borrow/'.$book) }}
 
-113. Source code untuk membuat fungsi borrow dengan menggunakan model BorrowHistory adalah
+113. Source code untuk membuat fungsi borrow dengan menggunakan model BorrowHistory adalah...
 
     a.
     ```php
@@ -1744,8 +1740,6 @@ minus
 
     d. sampul buku, descripsi, author
 
-minus
-
 ## Memperbaiki Tombol Pinjam di Halaman Detail
 
 126. Solusi saat tombol Pinjam buku tidak berfungsi adalah dengan mengetikkan source code...
@@ -1782,8 +1776,6 @@ minus
     </form>
     ```
     **
-
-    minus
 
 ## Membuat Komponen Card Buku
 
