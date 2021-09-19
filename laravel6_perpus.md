@@ -1344,7 +1344,9 @@
 
 ## Menyesuaikan Tampilan Register
 
-100. Perintah artisan untuk melihat vendor-vendor yang terdaftar pada aplikasi laravel adalah
+## Membuat Pagination Custom
+
+97. Perintah artisan untuk melihat vendor-vendor yang terdaftar pada aplikasi laravel adalah
 
     a. php artisan list:vendor
 
@@ -1354,7 +1356,7 @@
 
     d. php artisan vendor:publish --list
 
-101. Vendor ang perlu dipublish untung membuat custom pagination adalah...
+98. Vendor ang perlu dipublish untung membuat custom pagination adalah...
 
     a. Illuminate\Pagination\PaginationServiceProvider
 
@@ -1364,7 +1366,7 @@
 
     d. config
 
-102. Source code untuk memanggil file pagination custom yaitu materialize dari laravel-pagination adalah...
+99. Source code untuk memanggil file pagination custom yaitu materialize dari laravel-pagination adalah...
 
     a. ``{{ $book->links('default') }}``
 
@@ -1373,3 +1375,925 @@
     c. ``{{ $book->links('vendor.pagination.default') }}``
 
     **d. ``{{ $book->links('vendor.pagination.materialize') }}``**
+
+100. Source code untuk merubah template register ke frontend.templates.default adalah
+
+    a. @yield('frontend.templates.partials.default')
+
+    b. @include('frontend.templates.partials.default')
+
+    **c. @extends('frontend.templates.partials.default')**
+
+    d. @section('frontend.templates.partials.default')
+
+101. Class materialize untuk membuat icon berada didepan adalah...
+
+    a. suffix
+
+    **b. prefix**
+
+    c. prev
+
+    d. next
+
+102. Source code untuk mempercantik tampilan error dengan menggunakan materialize adalah...
+
+    a. class="@error('name') is-invalid @enderror"
+
+    **b. class="@error('name') invalid @enderror"**
+
+    c. class="@error('name') is-valid @enderror"
+
+    d. class="@error('name') valid @enderror"
+
+## Menyesuaikan Tampilan Login
+
+103. Apa saja form/field yang dibutuhkan untuk login?   
+    
+    a. name, email, password, password confirmation
+
+    b. email, password, password confirmation
+
+    c. name, email, password
+
+    **d. email, password**
+
+104. Source code yang benar untuk form login adalah..
+
+    **a. <form action="{{ route('login') }}" method="POST"> @csrf </form>**
+
+    b. <form action="{{ route('admin.login') }}" method="POST"> @csrf </form>
+
+    c. <form action="{{ route('user.login') }}" method="POST"> @csrf </form>
+
+    d. <form action="{{ route('signin') }}" method="POST"> @csrf </form>
+
+105. Source code untuk mengubah text button dari Register ke Login adalah
+
+    a. <input type="submit" class="vawes-effect waves-light btn red accent-1"> Login
+
+    b. <input type="submit" value="" class="vawes-effect waves-light btn red accent-1"> Login
+
+    **c. <input type="submit" value="Login" class="vawes-effect waves-light btn red accent-1">**
+
+    d. <input type="submit" id="Login" class="vawes-effect waves-light btn red accent-1">
+
+## Membuat Halaman Detail Buku
+
+106. Source code untuk membuat route dengan BookController dengan method show yang berada pada direktory Frontend adalah
+    
+    a. Route::get('/book/{book}', 'BookController@show')->name('book.show');
+
+    b. Route::get('/book/{book}', 'Frontend\BookController@show')->name('book.show');
+
+    **c. Route::get('/book/{book}', 'Frontend\\BookController@show')->name('book.show');**
+
+    d. Route::get('/book/{book}', 'Frontend//BookController@show')->name('book.show');
+
+107. Salah satu method untuk melihat/mengecek nilai objek dari book didalam controller adalah
+    
+    **a. dd($book);**
+
+    b. console.log($book);
+
+    c. printf($book);
+
+    d. show($book);
+
+108. Source code untuk menjadikan judul buku sebagai link untuk show detail buku adalah
+    
+    a. <a href="{{ route('book.show', $book) }}"> {{ Str::limit($book->title) }} </a>
+
+    b. <a href="{{ route('book.show', $book->id) }}"> {{ Str::limit($book->title) }} </a>
+
+    c. <a href="{{ route('book.show/{$book}') }}"> {{ Str::limit($book->title) }} </a>
+
+    **d. a dan b benar**
+
+## Membuat Section Buku Lainnya Dari Penulis
+
+109. Pada model author terdapat method books yang dimana relasinya satu author dapat memiliki banyak buku. Source code untuk mendapatkan data buku lainnya berdasarkan author adalah...
+
+    **a. @foreach($book->author->books)**
+
+    b. @foreach($book->author->books())
+
+    c. @foreach($book->author()->books)
+
+    d. @foreach($book->author()->books())
+
+110. Method untuk mendapatkan data 4 jumlah data adalah..
+
+    a. get(4)
+
+    **b. take(4)**
+
+    c. max(4)
+
+    d. min(4)
+
+111. Method untuk mendapatkan data secara acak adalah
+
+    a. rand()
+
+    b. random()
+
+    **c. shuffle()**
+
+    d. inRandom()
+
+## Membuat Fungsi Pinjam Buku
+
+112. Terdapat error Missing required parameters for [Route:book.borrow][URI:book/{book}/borrow] solusi nya adalah 
+
+    **a. {{ route('book.borrow', $book) }}**
+
+    b. {{ route(('book.borrow'), $book) }}
+
+    c. {{ route('book.borrow/$book') }}
+
+    d. {{ route('book.borrow/'.$book) }}
+
+113. Source code untuk membuat fungsi borrow dengan menggunakan model BorrowHistory adalah...
+
+    a.
+    ```
+    BorrowHistory::create([
+        'user_id' => Auth,
+        'book_id' => $book
+    ])
+    ```
+
+    b.
+    ```
+    BorrowHistory::create([
+        'user_id' => Auth::id,
+        'book_id' => $book->id
+    ])
+    ```
+
+    c.
+    ```
+    BorrowHistory::create([
+        'user_id' => auth()->id,
+        'book_id' => $book
+    ])
+    ```
+
+    **d.
+    ```
+    BorrowHistory::create([
+        'user_id' => auth()->id,
+        'book_id' => $book->id
+    ])
+    ```
+    **
+
+114. Source code agar route book.borrow hanya dapat diakses oleh user yang login adalah
+
+    a. Route::post('book/{book}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->prefix('auth');
+
+    b. Route::post('book/{book}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->prefix('user');
+
+    **c. Route::post('book/{book}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->middleware('auth');**
+ 
+    d. Route::post('book/{book}/borrow', 'Frontend\\BookController@borrow')->name('book.borrow')->middleware('user');
+
+## Fungsi Pinjam Buku dengan Eloquent Relationship
+
+115. Source code untuk menambahkan relasi belongsToMany borrow_history pada model User adalah...
+    
+    **a.
+    ```
+    public function borrow()
+    { 
+        return $this->belongsToMany(Book::class, 'borrow_history'); 
+    }
+    ```
+    **
+
+    b.
+    ```
+    public function borrow()
+    { 
+        return $this->belongsToMany(User::class, 'borrow_history'); 
+    }
+    ```
+
+    c.
+    ```
+    public function borrowed()
+    { 
+        return $this->belongsToMany(Book::class, BorrowHistory); 
+    }
+    ```
+
+    d.
+    ```
+    public function borrowed()
+    { 
+        return $this->belongsToMany(User::class, BorrowHistory); 
+    }
+    ```
+
+116. Source code untuk redirect ke halaman yang sama adalah
+    
+    **a. return redirect()->back();**
+
+    b. return redirect()->route()->back();
+
+    c. return redirect()->prev();
+
+    d. return redirect()->route()->prev();
+
+117. Source code untuk menambahkan buku yang dipinjam melalui user yang login 
+    
+    a.
+    ```
+    $user = auth()->id;
+    $user->borrow()->attach($book);
+    ```
+
+    **
+    b.
+    ```
+    $user = auth()->user();
+    $user->borrow()->attach($book);
+    ```
+    **
+
+    c.
+    ```
+    $user = auth()->id;
+    $user->borrow()->create($book);
+    ```
+
+    d.
+    ```
+    $user = auth()->user();
+    $user->borrow()->create($book);
+    ```
+
+## Menyempurnakan Proses Peminjaman Buku
+
+118. Dalam materialize untuk menampilkan pesan feedback adalah
+
+    a. alert
+
+    b. dialog
+
+    **c. toasts**
+
+    d. flash message
+
+119. Source code untuk mengurangi qty saat meminjam buku
+
+    a. $book->increment('qty');
+
+    **b. $book->decrement('qty');**
+
+    c. $book->min('qty');
+
+    d. $book->qty - 1;
+
+120. Source code agar tidak boleh meminjam buku yang sama adalah
+    
+    **a. if($user->borrow()->where('books.id', $book->id)->count() > 0)**
+
+    b. if($user->borrow()->where('books.id', $book->id)->count() >= 0)
+
+    c. if($user->borrow()->where('books.id', $book->id)->count() == 0)
+
+    d. if($user->borrow()->where('books.id', $book->id)->count != 1)
+
+# Finalisasi Sistem Perpustakaan
+
+## Membenahi Navigasi _ Relasi User dan Buku
+
+121. Syntax directive blade yang berfungsi untuk mengecek menu login dan register hanya bisa diakses oleh user yang belum login adalah...
+    
+    a. 
+    ```
+    @auth
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('Register') }}">Register</a></li> 
+    @endauth
+    ```
+
+    **b. 
+    ```
+    @guest 
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}">Register</a></li>
+    @endguest
+    ```
+    **
+
+    c.
+    ``` 
+    @unless 
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}">Register</a></li>
+    @endunless
+    ```
+    d. 
+    ```
+    @once 
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('Register') }}">Register</a></li>
+    @endonce
+    ```
+
+122. Solusi agar created_at dan updated_at memiliki value/nilai saat meminjam buku dan update peminjaman buku adalah
+
+    a. return belongsToMany(Book::class, 'borrow_history')->withTime();
+
+    b. return belongsToMany(Book::class, 'borrow_history')->withDateTime();
+
+    c. return belongsToMany(Book::class, 'borrow_history')->withTimestamp();
+
+    **d. return belongsToMany(Book::class, 'borrow_history')->withTimestamps();**
+
+123. Source code untuk mentrigger form post logout dengan id logout-form adalah...
+
+    **a.
+    ```
+    <li><a href="{{ route('logout')}}" 
+        onclick="event.preventDefault(); 
+        document.getElementById('logout-form').submit();">Logout</a>
+    </li>
+    ```
+    **
+
+    b.
+    ```
+    <li><a href="{{ route('logout')}}" 
+        onclick="event.preventDefault(); 
+        document.getElementByClass('logout-form').submit();">Logout</a>
+    </li>
+    ```
+
+    c.
+    ```
+    <li><a href="{{ route('logout')}}" 
+        onclick="event.preventDefault(); 
+        document.getElementByTag('logout-form').submit();">Logout</a>
+    </li>
+    ```
+
+    d.
+    ```
+    <li><a href="{{ route('logout')}}" 
+        onclick="event.preventDefault(); 
+        document.write('logout-form').submit();">Logout</a>
+    </li>
+    ```
+
+## Menampilkan Daftar Buku Yang Sedang Dipinjam
+
+124. Source code untuk menampilkan data buku yang dipinjam oleh user yang sedang login adalah...
+    
+    a. $books = auth()->user()->books();
+
+    **b. $books = auth()->user()->borrrow();**
+
+    c. $books = auth()->user()->borrrowed();
+
+    d. $books = auth()->user()->borrow()->book();
+
+125. Apa saja sebaiknya yang ditampilkan pada halaman buku yang sedang dipinjam
+
+    a. sampul buku, judul, descripsi, author, jumlah buku, tombol pinjam buku
+
+    b. sampul buku, judul, descripsi, author, jumlah buku
+
+    **c. sampul buku, judul, descripsi, author**
+
+    d. sampul buku, descripsi, author
+
+## Memperbaiki Tombol Pinjam di Halaman Detail
+
+126. Solusi saat tombol Pinjam buku tidak berfungsi adalah dengan mengetikkan source code...
+    
+    a.
+    ```
+    <form action="{{ route('book.borrow') }}" method="GET">
+        @csrf
+        <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
+    </form>
+    ```
+
+    b.
+    ```
+    <form action="{{ route('book.borrow') }}" method="POST">
+        @csrf
+        <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
+    </form>
+    ```
+
+    c.
+    ```
+    <form action="{{ route('book.borrow', $book) }}" method="GET">
+        @csrf
+        <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
+    </form>
+    ```
+
+    **d.
+    ```
+    <form action="{{ route('book.borrow', $book) }}" method="POST">
+        @csrf
+        <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
+    </form>
+    ```
+    **
+
+## Membuat Komponen Card Buku
+
+127. Agar mudah untuk merubah card yang sama pada halaman utama dan detail buku maka perlu dibuatkan...
+
+    **a. components card**
+
+    b. fungsi baru
+
+    c. controller baru
+
+    d. semua benar
+
+128. Syntax blade directive untuk menasukan component adalah
+
+    a. @component('frontend.templates.components.card-book') @endcomponent
+
+    b. @components('frontend.templates.components.card-book') @endcomponents
+
+    c. @include('frontend.templates.components.card-book')
+
+    **d. a dan c benar**
+
+129. Cara passing variable di dalam directive component adalah
+
+    a. @component('frontend.templates.components.card-book', $book) @endcomponent
+
+    **b. @component('frontend.templates.components.card-book', ['book' => $book]) @endcomponent**
+
+    c. @components('frontend.templates.components.card-book', $book) @endcomponents
+
+    d. @components('frontend.templates.components.card-book', ['book' => $book]) @endcomponents
+
+## Admin Daftar Buku yang Dipinjam
+
+130. Sytanx menampilkan data peminjaman buku urut secara terbaru adalah...
+
+    a. $borrows = BorrowHistory::latest();
+
+    b. $borrows = BorrowHistory::updated();
+
+    c. $borrows = BorrowHistory::orderBy('created_at', 'DESC');
+
+    **d. a dan c benar**
+
+131. Agar pada borrow history dapat mengetahui nama user nya siapa dan judul buku nya apa maka perlu menambahkan relasi pada model BorrowHistory...
+
+    **a. user dan book dengan relasi belongsTo**
+
+    b. author dan book dengan relasi belongsTo
+
+    c. user dan book dengan relasi hasMany
+
+    d. author dan book dengan relasi hasMany
+
+132. Apa saja action pada halaman pinjam buku?
+    
+    a. hapus
+
+    b. edit, hapus
+
+    c. lihat detail, edit, hapus
+
+    **d. Pengembalian Buku**
+
+## Fungsi Pengembalian Buku
+
+133. Perintah artisan untuk membuat column/field baru pada tabel borrow_history dengan migration yaitu... 
+
+    a. php artisan make:migration add_returned_at_and_receiver_user_id_on_borrrow_table table=borrow_history
+
+    b. php artisan make:migration add_returned_at_and_receiver_user_id_on_borrrow_table -table=borrow_history
+
+    **c. php artisan make:migration add_returned_at_and_receiver_user_id_on_borrrow_table --table=borrow_history**
+
+    d. php artisan make:migration add_returned_at_and_receiver_user_id_on_borrrow_table --t=borrow_history
+
+134. Pada column returned_at menggunakan dateTime, untuk dateTime kita dapat memanfaatkan library...
+
+    a. Faker
+
+    **b. Carbon**
+
+    c. Guzzle
+
+    d. Phpunit
+
+135. Cara menggunakan carbon yang benar adalah...
+
+    a. 'returned_at' => Carbon::create()
+
+    b. 'returned_at' => $carbon->create()
+
+    **c. 'returned_at' => Carbon::now()**
+
+    d. 'returned_at' => $carbon->now()
+
+## Menampilkan Hanya Buku yang Sedang Dipinjam
+
+136. Source code agar data buku yang dikembalikan tidak tampil di halaman data peminjaman buku adalah...
+
+    **a. $borrow = BorrowHistory::where('returned_at', null)->latest();**
+
+    b. $borrow = BorrowHistory::where('returned_at', now())->latest();
+
+    c. $borrow = BorrowHistory::where('created_at', null)->latest();
+
+    d. $borrow = BorrowHistory::where('created_at', now())->latest();
+
+137. Cara membuat scope function yang benar adalah
+
+    a.
+    ```
+    public function scopeIsBorrowed()
+    {
+        return $query->where('returned_at', null);
+    }
+    ```
+
+    **b.
+    ```
+    public function scopeIsBorrowed($query)
+    {
+        return $query->where('returned_at', null);
+    }
+    ```
+    **
+
+    c.
+    ```
+    public function scopeisborrowed()
+    {
+        return where('returned_at', null);
+    }
+    ```
+
+    d.
+    ```
+    public function isBorrowed($query)
+    {
+        return $query->where('returned_at', null);
+    }
+    ```
+
+138. Cara memanggil scope function yang benar adalah
+
+    a. $borrows = BorrowHistory::scopeIsborrowed()->latest();
+
+    b. $borrows = BorrowHistory::scopeIsborrowed('returned_at', null)->latest();
+
+    **c. $borrows = BorrowHistory::isborrowed()->latest();**
+
+    d. $borrows = BorrowHistory::isborrowed('returned_at', null)->latest();
+
+## Judul Halaman Dinamis Untuk Frontend
+
+## Menangani Masalah n+1
+
+139. Mengambil data dari database dengan melooping data dan mengakibatkan memanggil query yang sama berulang-ulang adalah masalah...
+    
+    a. 1+1
+
+    **b. n+1**
+
+    c. n+n
+
+    d. b dan c benar
+
+139. Solusi untuk permasalah n+1 adalah dengan menggunakan...
+
+    a. eager load
+
+    b. lazy load
+
+    c. with load
+
+    **d. a dan b benar**
+
+140. Source code yang benar untuk menggunakan lazy load adalah
+
+    **a. 
+    ```
+    $book = Book::orderBy('title', 'ASC')->get();
+    $book->load('author');
+    ```
+    **
+
+    b.
+    ```
+    $book = Book::orderBy('title', 'ASC')->get();
+    $book->with('author');
+    ```
+
+    c.
+    ```
+    $book = Book::orderBy('title', 'ASC')->get();
+    $book->lazy('author');
+    ```
+
+    d. a dan b benar
+
+# Perbaikan Fitur Dashboard Admin Update 1
+
+## Menambahkan Kuantitas Untuk Buku yang Dikembalikan
+
+142. Pada source code dibawah agar table data dapat terisi data dengan dataTable maka perlu menambahkan source code...
+    ```
+    <tr>
+        <th>Id</th>
+        <th>Judul</th>
+        <th>Deskripsi</th>
+        <th>Jumlah Buku</th>
+    </tr>
+    ```
+    
+    a. 
+    ```
+        columns: [
+            { data: 'DT_RowIndex', orderable: false, searchable: false }
+            { data: 'title' }
+            { data: 'description' }
+            { data: 'qty' }
+        ]
+    ```
+
+    b. 
+    ```
+        columns: [
+            { data: 'DT_RowIndex', orderable: false, searchable: false };
+            { data: 'title' };
+            { data: 'description' };
+            { data: 'qty' };
+        ]
+    ```
+
+    **c. 
+    ```
+        columns: [
+            { data: 'DT_RowIndex', orderable: false, searchable: false },
+            { data: 'title' },
+            { data: 'description' },
+            { data: 'qty' }
+        ]
+    ```
+    **
+
+    d. 
+    ```
+        columns: [
+            data: 'DT_RowIndex', orderable: false, searchable: false,
+            data: 'title',
+            data: 'description',
+            data: 'qty';
+        ]
+    ```
+    
+
+143. Source code untuk menambahkan qty saat buku dikembalikan adalah...
+    
+    a. ``$borrowHistory->book->increment('qty');``
+
+    b. ``$borrowHistory->book->decrement('qty');``
+
+    **c. ``$borrowHistory->book()->increment('qty');``**
+
+    d. ``$borrowHistory->book()->decrement('qty');``
+
+144. ``$borrowHistory->book`` Artinya dapat memanggil relasi book dan dapat mengakses...
+
+    **a. property book**
+
+    b. method model book
+
+    c. scope function book
+    
+    d.  a dan b benar
+
+## Fix Bug Pada Pengecekan Buku Dipinjam
+
+145. Solusi untuk mengatasi bug meminjam buku tetapi buku yang dipinjam sudah dikembalikan maka perlu menambahkan source code...
+    
+    **a. ->where('returned_at', null)**
+
+    b. ->where('returned_at', =, null)
+
+    c. ->where('returned_at', !, null)
+
+    d. ->where('returned_at', !=, null)
+
+146. Source code untuk menyederhanakan pinjam buku dengan scope function adalah...
+
+    a. 
+    ```php
+    public function scopeIsStillBorrow($query, $bookId){
+        return $query->where('books.id', $bookId)
+        ->where('returned_at', null)
+        ->count() < 0;
+    }
+    ```
+
+    b.
+    ```php
+    public function scopeIsStillBorrow($query, $bookId){
+        return $query->where('books.id', $bookId)
+        ->where('returned_at', null)
+        ->count() <= 0;
+    }
+    ```
+
+    **c.
+    ```php
+    public function scopeIsStillBorrow($query, $bookId){
+        return $query->where('books.id', $bookId)
+        ->where('returned_at', null)
+        ->count() > 0;
+    }
+    ```
+    **
+
+    d.
+    ```php
+    public function scopeIsStillBorrow($query, $bookId){
+        return $query->where('books.id', $bookId)
+        ->where('returned_at', null)
+        ->count() >= 0;
+    }
+    ```
+
+147. Source code untuk memanggil scope function isStillBorrow adalah...
+
+    a. $user->borrow->isStillBorrow($book->id)
+
+    **b. $user->borrow()->isStillBorrow($book->id)**
+
+    c. $user->borrow->scopeIsStillBorrow($book->id)
+
+    d. $user->borrow()->scopeIsStillBorrow($book->id)
+
+## Membuat Halaman Laporan Buku Paling Banyak Dipinjam
+
+148. Source code untuk menampilkan buku yang paling banyak dipinjam dengan 10 data per pagenya dan menampilkan jumlah data yang dipinjam adalah... 
+
+    a. Book::withCount('borrowed')->orderBy('book_count', 'asc')->paginate(10);
+
+    b. Book::withCount('borrowed')->orderBy('book_count', 'asc')->paginate(10);
+
+    c. Book::withCount('borrowed')->orderBy('borrowed_count', 'asc')->paginate(10);
+
+    **d. Book::withCount('borrowed')->orderBy('borrowed_count', 'desc')->paginate(10);**
+
+149. Source code untuk menampilkan jumlah buku dipinjam dengan withCount adalah...
+    
+    a. {{ $book->count }}
+
+    b. {{ $book->count() }}
+
+    c. {{ $book->borrowed->count }}
+
+    **d. {{ $book->borrowed_count }}**
+
+150. fungsi orderBy saat tidak di set parameter keduanya asc atau desc maka yang terjadi adalah...
+
+    a. error
+
+    **b. urut secara ascending**
+
+    c. urut secara descending
+
+    d. random
+
+## Membuat Halaman Laporan User Teraktif
+
+151. Fungsi diffForHumans() akan menampilkan?
+
+    a. Hari, tanggal, bulan, dan tahun
+
+    b. tanggal, nomer bulan, dan tahun
+
+    c. tanggal, nama bulan, dan tahun 
+
+    **d. berapa hari/bulan/tahun yang lalu**
+
+152. Berikut ini source code untuk membuat breadcrumbs yang benar adalah...
+
+    a. 
+    ```php
+    Breadcrumbs::for('admin.report.top-book', function($trail) {
+        push('Beranda', route('admin.dashboard'));
+    });
+    ```
+
+    b. 
+    ```php
+    Breadcrumbs::push('admin.report.top-book', function($trail) {
+        for('Beranda', route('admin.dashboard'));
+    });
+    ```
+
+    **c. 
+    ```php
+    Breadcrumbs::for('admin.report.top-book', function($trail) {
+        push('Beranda', route('admin.dashboard'));
+    });
+    ```
+    **
+
+    d. 
+    ```php
+    Breadcrumbs::for('admin.report.top-book', function($trail) {
+        for('Beranda', route('admin.dashboard'));
+    });
+    ```
+
+## Penomoran Data Diluar DataTable
+
+153. Apa output yang terjadi saat ada source code dibawah dan halaman terdapat pagination? 
+    ```php 
+    @php 
+        $no = 1;
+    @endphp
+    @foreach($books as $book)
+    <tr>
+        <td> {{ $no++ }} </td>
+    </tr>
+    @endforeach 
+    ```
+    a. Nomer akan urut dari 0 sampai akhir dari jumlah row tabel book
+
+    b. Nomer akan urut dari 0 sampai akhir dari jumlah row tabel book dan saat pindah pagination ulang dari nomer 0 lagi
+
+    c. Nomer akan urut dari 1 sampai akhir dari jumlah row tabel book
+
+    **d. Nomer akan urut dari 1 sampai akhir dari jumlah row tabel book dan saat pindah pagination ulang dari nomer 1 lagi**
+
+154. Source code untuk membuat penomoran otomatis dan setiap pindah page nomer tidak akan ulang dari nomer 1 lagi adalah...
+
+    a. 
+    ```php
+    @php
+        $page = 1;
+        if(request()->has('page')){
+            $page = request('page');
+        }
+        $no = (10 * page) - (10);
+    @endphp
+    ```
+
+    b.
+    ```php
+    @php
+        $page = 1;
+        if(request()->has('page')){
+            $page = request('page');
+        }
+        $no = (10 * page) - (10-page);
+    @endphp
+    ```
+
+    **c.
+    ```php
+    @php
+        $page = 1;
+        if(request()->has('page')){
+            $page = request('page');
+        }
+        $no = (10 * page) - (10-1);
+    @endphp
+    ```
+    **
+
+    d.
+    ```php
+    @php
+        $page = 1;
+        if(request()->has('page')){
+            $page = request('page');
+        }
+        $no = (10 * page) - (page-10);
+    @endphp
+    ```
+
+155. Cara memanggil environment variable pada code ini ``PAGINATION_ADMIN=15`` adalah...
+
+    a. {{ $PAGINATION_ADMIN }}
+
+    **b. env('PAGINATION_ADMIN')**
+
+    c. env($PAGINATION_ADMIN)
+    
+    d. environment("PAGINATION_ADMIN")
