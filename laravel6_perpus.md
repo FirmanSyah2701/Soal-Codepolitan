@@ -1332,27 +1332,27 @@
 
     d. config
 
-99. Source code untuk memanggil file pagination custom yaitu materialize dari laravel-pagination adalah..
+99. Source code untuk memanggil file pagination custom yaitu materialize dari laravel-pagination adalah...
 
-    a. {{ $book->links('default') }}
+    a. ``{{ $book->links('default') }}``
 
-    b. {{ $book->links('materialize') }}
+    b. ``{{ $book->links('materialize') }}``
 
-    c. {{ $book->links('vendor.pagination.default') }}
+    c. ``{{ $book->links('vendor.pagination.default') }}``
 
-    **d. {{ $book->links('vendor.pagination.materialize') }}**
+    **d. ``{{ $book->links('vendor.pagination.materialize') }}``**
 
 ## Menyesuaikan Tampilan Register
 
-100. Source code untuk menggubah template register ke frontend.templates.default adalah
+100. Source code untuk menggubah template register ke frontend.templates.default adalah...
 
-    **a. @extends('frontend.templates.partials.default')**
+    **a. ``@extends('frontend.templates.partials.default')``**
 
-    b. @include('frontend.templates.partials.default')
+    b. ``@include('frontend.templates.partials.default')``
 
-    c. @section('frontend.templates.partials.default')
+    c. ``@section('frontend.templates.partials.default')``
 
-    d. @yield('frontend.templates.partials.default')
+    d. ``@yield('frontend.templates.partials.default')``
 
 101. Class materialize untuk membuat icon berada didepan adalah...
 
