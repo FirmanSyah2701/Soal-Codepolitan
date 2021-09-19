@@ -1344,38 +1344,6 @@
 
 ## Menyesuaikan Tampilan Register
 
-## Membuat Pagination Custom
-
-97. Perintah artisan untuk melihat vendor-vendor yang terdaftar pada aplikasi laravel adalah
-
-    a. php artisan list:vendor
-
-    **b. php artisan vendor:publish**
-
-    c. php artisan vendor:publish -list
-
-    d. php artisan vendor:publish --list
-
-98. Vendor ang perlu dipublish untung membuat custom pagination adalah...
-
-    a. Illuminate\Pagination\PaginationServiceProvider
-
-    b. Spatie\Permission\PermissionServiceProvider
-
-    **c. laravel-pagination**
-
-    d. config
-
-99. Source code untuk memanggil file pagination custom yaitu materialize dari laravel-pagination adalah...
-
-    a. ``{{ $book->links('default') }}``
-
-    b. ``{{ $book->links('materialize') }}``
-
-    c. ``{{ $book->links('vendor.pagination.default') }}``
-
-    **d. ``{{ $book->links('vendor.pagination.materialize') }}``**
-
 100. Source code untuk merubah template register ke frontend.templates.default adalah
 
     a. @yield('frontend.templates.partials.default')
@@ -1517,36 +1485,28 @@
 113. Source code untuk membuat fungsi borrow dengan menggunakan model BorrowHistory adalah...
 
     a.
-    ```
     BorrowHistory::create([
         'user_id' => Auth,
         'book_id' => $book
     ])
-    ```
 
     b.
-    ```
     BorrowHistory::create([
         'user_id' => Auth::id,
         'book_id' => $book->id
     ])
-    ```
 
     c.
-    ```
     BorrowHistory::create([
         'user_id' => auth()->id,
         'book_id' => $book
     ])
-    ```
 
     **d.
-    ```
     BorrowHistory::create([
         'user_id' => auth()->id,
         'book_id' => $book->id
     ])
-    ```
     **
 
 114. Source code agar route book.borrow hanya dapat diakses oleh user yang login adalah
@@ -1564,37 +1524,29 @@
 115. Source code untuk menambahkan relasi belongsToMany borrow_history pada model User adalah...
     
     **a.
-    ```
     public function borrow()
     { 
         return $this->belongsToMany(Book::class, 'borrow_history'); 
     }
-    ```
     **
 
     b.
-    ```
     public function borrow()
     { 
         return $this->belongsToMany(User::class, 'borrow_history'); 
     }
-    ```
 
     c.
-    ```
     public function borrowed()
     { 
         return $this->belongsToMany(Book::class, BorrowHistory); 
     }
-    ```
 
-    d.
-    ```
+    d.    
     public function borrowed()
     { 
         return $this->belongsToMany(User::class, BorrowHistory); 
     }
-    ```
 
 116. Source code untuk redirect ke halaman yang sama adalah
     
@@ -1609,30 +1561,21 @@
 117. Source code untuk menambahkan buku yang dipinjam melalui user yang login 
     
     a.
-    ```
     $user = auth()->id;
     $user->borrow()->attach($book);
-    ```
 
-    **
-    b.
-    ```
+    **b.
     $user = auth()->user();
     $user->borrow()->attach($book);
-    ```
     **
 
     c.
-    ```
     $user = auth()->id;
     $user->borrow()->create($book);
-    ```
-
+    
     d.
-    ```
     $user = auth()->user();
     $user->borrow()->create($book);
-    ```
 
 ## Menyempurnakan Proses Peminjaman Buku
 
@@ -1673,37 +1616,30 @@
 121. Syntax directive blade yang berfungsi untuk mengecek menu login dan register hanya bisa diakses oleh user yang belum login adalah...
     
     a. 
-    ```
     @auth
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('Register') }}">Register</a></li> 
     @endauth
-    ```
 
     **b. 
-    ```
     @guest 
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('register') }}">Register</a></li>
     @endguest
-    ```
     **
 
     c.
-    ``` 
     @unless 
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('register') }}">Register</a></li>
     @endunless
-    ```
+    
     d. 
-    ```
     @once 
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('Register') }}">Register</a></li>
     @endonce
-    ```
-
+    
 122. Solusi agar created_at dan updated_at memiliki value/nilai saat meminjam buku dan update peminjaman buku adalah
 
     a. return belongsToMany(Book::class, 'borrow_history')->withTime();
@@ -1717,37 +1653,29 @@
 123. Source code untuk mentrigger form post logout dengan id logout-form adalah...
 
     **a.
-    ```
     <li><a href="{{ route('logout')}}" 
         onclick="event.preventDefault(); 
         document.getElementById('logout-form').submit();">Logout</a>
     </li>
-    ```
     **
 
     b.
-    ```
     <li><a href="{{ route('logout')}}" 
         onclick="event.preventDefault(); 
         document.getElementByClass('logout-form').submit();">Logout</a>
     </li>
-    ```
 
     c.
-    ```
     <li><a href="{{ route('logout')}}" 
         onclick="event.preventDefault(); 
         document.getElementByTag('logout-form').submit();">Logout</a>
     </li>
-    ```
 
     d.
-    ```
     <li><a href="{{ route('logout')}}" 
         onclick="event.preventDefault(); 
         document.write('logout-form').submit();">Logout</a>
     </li>
-    ```
 
 ## Menampilkan Daftar Buku Yang Sedang Dipinjam
 
@@ -1776,36 +1704,29 @@
 126. Solusi saat tombol Pinjam buku tidak berfungsi adalah dengan mengetikkan source code...
     
     a.
-    ```
     <form action="{{ route('book.borrow') }}" method="GET">
         @csrf
         <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
     </form>
-    ```
-
+    
     b.
-    ```
     <form action="{{ route('book.borrow') }}" method="POST">
         @csrf
         <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
     </form>
-    ```
-
+    
     c.
-    ```
     <form action="{{ route('book.borrow', $book) }}" method="GET">
         @csrf
         <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
     </form>
-    ```
 
     **d.
-    ```
     <form action="{{ route('book.borrow', $book) }}" method="POST">
         @csrf
         <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
     </form>
-    ```
+    
     **
 
 ## Membuat Komponen Card Buku
@@ -1919,37 +1840,32 @@
 137. Cara membuat scope function yang benar adalah
 
     a.
-    ```
     public function scopeIsBorrowed()
     {
         return $query->where('returned_at', null);
     }
-    ```
+    
 
     **b.
-    ```
     public function scopeIsBorrowed($query)
     {
         return $query->where('returned_at', null);
     }
-    ```
     **
 
     c.
-    ```
     public function scopeisborrowed()
     {
         return where('returned_at', null);
     }
-    ```
+    
 
     d.
-    ```
     public function isBorrowed($query)
     {
         return $query->where('returned_at', null);
     }
-    ```
+    
 
 138. Cara memanggil scope function yang benar adalah
 
@@ -1988,23 +1904,17 @@
 140. Source code yang benar untuk menggunakan lazy load adalah
 
     **a. 
-    ```
     $book = Book::orderBy('title', 'ASC')->get();
     $book->load('author');
-    ```
     **
 
     b.
-    ```
     $book = Book::orderBy('title', 'ASC')->get();
     $book->with('author');
-    ```
 
     c.
-    ```
     $book = Book::orderBy('title', 'ASC')->get();
     $book->lazy('author');
-    ```
 
     d. a dan b benar
 
@@ -2013,56 +1923,47 @@
 ## Menambahkan Kuantitas Untuk Buku yang Dikembalikan
 
 142. Pada source code dibawah agar table data dapat terisi data dengan dataTable maka perlu menambahkan source code...
-    ```
+    
     <tr>
         <th>Id</th>
         <th>Judul</th>
         <th>Deskripsi</th>
         <th>Jumlah Buku</th>
     </tr>
-    ```
+    
     
     a. 
-    ```
-        columns: [
-            { data: 'DT_RowIndex', orderable: false, searchable: false }
-            { data: 'title' }
-            { data: 'description' }
-            { data: 'qty' }
-        ]
-    ```
+    columns: [
+        { data: 'DT_RowIndex', orderable: false, searchable: false }
+        { data: 'title' }
+        { data: 'description' }
+        { data: 'qty' }
+    ]
 
     b. 
-    ```
-        columns: [
-            { data: 'DT_RowIndex', orderable: false, searchable: false };
-            { data: 'title' };
-            { data: 'description' };
-            { data: 'qty' };
-        ]
-    ```
+    columns: [
+        { data: 'DT_RowIndex', orderable: false, searchable: false };
+        { data: 'title' };
+        { data: 'description' };
+        { data: 'qty' };
+    ]
 
     **c. 
-    ```
-        columns: [
-            { data: 'DT_RowIndex', orderable: false, searchable: false },
-            { data: 'title' },
-            { data: 'description' },
-            { data: 'qty' }
-        ]
-    ```
+    columns: [
+        { data: 'DT_RowIndex', orderable: false, searchable: false },
+        { data: 'title' },
+        { data: 'description' },
+        { data: 'qty' }
+    ]
     **
 
     d. 
-    ```
-        columns: [
-            data: 'DT_RowIndex', orderable: false, searchable: false,
-            data: 'title',
-            data: 'description',
-            data: 'qty';
-        ]
-    ```
-    
+    columns: [
+        data: 'DT_RowIndex', orderable: false, searchable: false,
+        data: 'title',
+        data: 'description',
+        data: 'qty';
+    ]
 
 143. Source code untuk menambahkan qty saat buku dikembalikan adalah...
     
@@ -2098,42 +1999,38 @@
 
 146. Source code untuk menyederhanakan pinjam buku dengan scope function adalah...
 
-    a. 
-    ```php
+    a.
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
         ->where('returned_at', null)
         ->count() < 0;
     }
-    ```
+    
 
     b.
-    ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
         ->where('returned_at', null)
         ->count() <= 0;
     }
-    ```
+    
 
     **c.
-    ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
         ->where('returned_at', null)
         ->count() > 0;
     }
-    ```
+    
     **
 
     d.
-    ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
         ->where('returned_at', null)
         ->count() >= 0;
     }
-    ```
+    
 
 147. Source code untuk memanggil scope function isStillBorrow adalah...
 
@@ -2192,38 +2089,34 @@
 152. Berikut ini source code untuk membuat breadcrumbs yang benar adalah...
 
     a. 
-    ```php
     Breadcrumbs::for('admin.report.top-book', function($trail) {
         push('Beranda', route('admin.dashboard'));
     });
-    ```
+    
 
     b. 
-    ```php
     Breadcrumbs::push('admin.report.top-book', function($trail) {
         for('Beranda', route('admin.dashboard'));
     });
-    ```
+    
 
-    **c. 
-    ```php
+    **c.
     Breadcrumbs::for('admin.report.top-book', function($trail) {
         push('Beranda', route('admin.dashboard'));
     });
-    ```
+    
     **
 
     d. 
-    ```php
     Breadcrumbs::for('admin.report.top-book', function($trail) {
         for('Beranda', route('admin.dashboard'));
     });
-    ```
+    
 
 ## Penomoran Data Diluar DataTable
 
 153. Apa output yang terjadi saat ada source code dibawah dan halaman terdapat pagination? 
-    ```php 
+
     @php 
         $no = 1;
     @endphp
@@ -2232,7 +2125,7 @@
         <td> {{ $no++ }} </td>
     </tr>
     @endforeach 
-    ```
+    
     a. Nomer akan urut dari 0 sampai akhir dari jumlah row tabel book
 
     b. Nomer akan urut dari 0 sampai akhir dari jumlah row tabel book dan saat pindah pagination ulang dari nomer 0 lagi
@@ -2244,7 +2137,6 @@
 154. Source code untuk membuat penomoran otomatis dan setiap pindah page nomer tidak akan ulang dari nomer 1 lagi adalah...
 
     a. 
-    ```php
     @php
         $page = 1;
         if(request()->has('page')){
@@ -2252,10 +2144,9 @@
         }
         $no = (10 * page) - (10);
     @endphp
-    ```
+    
 
     b.
-    ```php
     @php
         $page = 1;
         if(request()->has('page')){
@@ -2263,10 +2154,9 @@
         }
         $no = (10 * page) - (10-page);
     @endphp
-    ```
+    
 
     **c.
-    ```php
     @php
         $page = 1;
         if(request()->has('page')){
@@ -2274,11 +2164,10 @@
         }
         $no = (10 * page) - (10-1);
     @endphp
-    ```
+    
     **
 
     d.
-    ```php
     @php
         $page = 1;
         if(request()->has('page')){
@@ -2286,9 +2175,9 @@
         }
         $no = (10 * page) - (page-10);
     @endphp
-    ```
+    
 
-155. Cara memanggil environment variable pada code ini ``PAGINATION_ADMIN=15`` adalah...
+155. Cara memanggil environment variable pada code ini PAGINATION_ADMIN=15 adalah...
 
     a. {{ $PAGINATION_ADMIN }}
 
