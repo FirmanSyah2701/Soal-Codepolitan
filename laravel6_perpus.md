@@ -2079,8 +2079,8 @@ minus
     ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
-                     ->where('returned_at', null)
-                     ->count() < 0;
+            ->where('returned_at', null)
+            ->count() < 0;
     }
     ```
 
@@ -2088,8 +2088,8 @@ minus
     ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
-                     ->where('returned_at', null)
-                     ->count() <= 0;
+            ->where('returned_at', null)
+            ->count() <= 0;
     }
     ```
 
@@ -2097,8 +2097,8 @@ minus
     ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
-                     ->where('returned_at', null)
-                     ->count() > 0;
+            ->where('returned_at', null)
+            ->count() > 0;
     }
     ```
     **
@@ -2107,8 +2107,8 @@ minus
     ```php
     public function scopeIsStillBorrow($query, $bookId){
         return $query->where('books.id', $bookId)
-                     ->where('returned_at', null)
-                     ->count() >= 0;
+            ->where('returned_at', null)
+            ->count() >= 0;
     }
     ```
 
